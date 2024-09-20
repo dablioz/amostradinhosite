@@ -21,6 +21,8 @@ header img {
 }
 
 #menu-container {
+    background-color: #303030;
+    border-radius: 5px;
     width: 100vw;
     padding: 0;
     display: flex;
