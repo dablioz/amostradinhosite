@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Modal from "@mui/material/Modal";
 import Box from '@mui/material/Box';
+import bobesponja from "./assets/bobesponja.jpeg"
 import "./App.css";
 
 const style = {
@@ -25,7 +26,7 @@ function App() {
     return (
         <>
             <header>
-                <img src="src\assets\bobesponja.jpeg" alt="" />
+                <img src={bobesponja} alt="" />
                 <span>amostradinhosite</span>
             </header>
             <div id="menu-container">
@@ -56,7 +57,7 @@ function App() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                  <img src="src\assets\bobesponja.jpeg" alt=""/>
+                  <img src={bobesponja} alt=""/>
                 </Box>
             </Modal>
         </>
