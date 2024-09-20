@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Modal from "@mui/material/Modal";
+import Box from '@mui/material/Box';
+import "./App.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 720,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <>
+            <header>
+                <img src="src\assets\bobesponja.jpeg" alt="" />
+                <span>amostradinhosite</span>
+            </header>
+            <div id="menu-container">
+                <div id="menu">
+                    <div className="item" id="sobre" onClick={handleOpen}>
+                        sobre
+                    </div>
+                    <div className="item" id="cursos">
+                        cursos
+                    </div>
+                    <div className="item" id="contatos">
+                        contatos
+                    </div>
+                </div>
+            </div>
+
+            <span>Nome</span> <br></br>
+            <input id="name"></input> <br></br>
+            <span>Email</span> <br></br>
+            <input id="email"></input> <br></br>
+            <span>Mensagem</span> <br></br>
+            <input id="mensagem"></input> <br></br>
+
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                  <img src="src\assets\bobesponja.jpeg" alt=""/>
+                </Box>
+            </Modal>
+        </>
+    );
 }
 
-export default App
+export default App;
