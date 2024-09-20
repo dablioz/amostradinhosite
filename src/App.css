@@ -36,7 +36,8 @@ header img {
 }
 
 .item {
-    width: fit-content;
+    text-align: center;
+    width: 80px;
     padding: 10px;
     cursor: pointer;
 }
