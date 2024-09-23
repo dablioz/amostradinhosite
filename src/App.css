@@ -1,3 +1,7 @@
+* {
+    outline: none !important;
+}
+
 #root {
     max-width: 1280px;
     /* margin: 0 auto; */
@@ -29,17 +33,27 @@ header img {
 
 #menu {
     background-color: #303030;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     padding: 0;
     display: flex;
     flex-direction: row;
 }
 
 .item {
+    background-color: #303030;
+    border-radius: 5px;
     text-align: center;
     width: 80px;
     padding: 10px;
     cursor: pointer;
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+.item:hover {
+    background-color: #404040;
 }
 
 #jumpscare {
