@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contatos from "../Components/Contatos";
 import Sobre from "../Components/Sobre";
+import Cursos from "../Components/Cursos"
 import Navbar from "../Components/Navbar";
 import Home from "../Components/Home";
 
