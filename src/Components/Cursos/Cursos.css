@@ -1,0 +1,30 @@
+#caixa {
+    background-size: auto, cover;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-image: radial-gradient(rgba(0, 0, 0, 0), #00000080),
+        url("../../assets/banner-interna.jpg");
+
+    background-position: 10% 50%, 50% 50%;
+    max-width: 400px;
+    height: 200px;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#caixa h3 {
+    margin-left: 15px;
+    margin-top: 7px;
+}
+
+#bottom {
+    display: flex;
+    place-self: flex-end;
+}
+
+.info {
+    background-color: #16171e !important;
+    margin: 0 10px 10px 0 !important;
+}

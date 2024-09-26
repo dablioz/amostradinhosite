@@ -3,7 +3,6 @@
 }
 
 #root {
-    max-width: 1280px;
     /* margin: 0 auto; */
     /* padding: 2rem; */
     /* text-align: center; */
@@ -12,20 +11,22 @@
 header {
     display: flex;
     align-items: center;
-    background-color: #303030;
-    min-width: 100vw;
+    background-color: #303030;/* 
+    min-width: 100%; */
     font-size: 20px;
 }
 
 header img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     padding: 15px;
 }
 
+#container{
+    width: 100%;
+}
 #menu-container {
-    width: 100vw;
+    /* width: 100lvw; */
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -43,7 +44,8 @@ header img {
     background-color: #303030;
     border-radius: 5px;
     text-align: center;
-    width: 80px;
+    height: 40px;
+    margin: 15px;
     padding: 10px;
     cursor: pointer;
     user-select: none; /* For Chrome and Opera */
@@ -59,4 +61,22 @@ header img {
 #jumpscare {
     width: calc(100vw - 80px);
     max-width: 600px;
+}
+
+@media (max-width: 600px) {
+    .item span {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .item {
+        width: 120px;
+    }
+    .item span {
+        display: unset;
+    }
+    .item .MuiSvgIcon-root {
+        display: none;
+    }
 }
