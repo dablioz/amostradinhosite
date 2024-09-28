@@ -1,82 +1,13 @@
-* {
-    outline: none !important;
+#App {
+    position: relative;
+    min-height: calc(100vh - 160px);
+    padding: 120px 0 40px 0;
+    /* min-height: calc(100vh - 160px); */
 }
 
-#root {
-    /* margin: 0 auto; */
-    /* padding: 2rem; */
-    /* text-align: center; */
-}
-
-header {
-    display: flex;
-    align-items: center;
-    background-color: #303030;/* 
-    min-width: 100%; */
-    font-size: 20px;
-}
-
-header img {
-    width: 50px;
-    height: 50px;
-    padding: 15px;
-}
-
-#container{
-    width: 100%;
-}
-#menu-container {
-    /* width: 100lvw; */
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-#menu {
-    background-color: #303030;
-    border-radius: 0 0 5px 5px;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.item {
-    background-color: #303030;
-    border-radius: 5px;
-    text-align: center;
-    height: 40px;
-    margin: 15px;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none; /* For Chrome and Opera */
-    -ms-user-select: none; /* For Internet Edge and Explorer*/
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    -khtml-user-select: none; /* Konqueror HTML */
-}
-.item:hover {
-    background-color: #404040;
-}
-
-#jumpscare {
-    width: calc(100vw - 80px);
-    max-width: 600px;
-}
-
-@media (max-width: 600px) {
-    .item span {
-        display: none;
-    }
-}
-
-@media (min-width: 600px) {
-    .item {
-        width: 120px;
-    }
-    .item span {
-        display: unset;
-    }
-    .item .MuiSvgIcon-root {
-        display: none;
-    }
+.container {
+    position: relative;
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto 20px;
 }

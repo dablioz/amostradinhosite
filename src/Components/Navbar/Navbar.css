@@ -1,0 +1,78 @@
+header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+
+#marca-container {
+    background-color: #303030;
+    font-size: 20px;
+}
+
+#marca {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    place-items: center;
+}
+#logo {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+
+#menu-container {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu {
+    background-color: #303030;
+    border-radius: 0 0 5px 5px;
+    padding: 0;
+}
+
+.item {
+    background-color: #303030;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    margin: 15px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+.item:hover {
+    background-color: #404040;
+}
+
+#jumpscare {
+    width: calc(100vw - 120px);
+    max-width: 600px;
+}
+
+@media (max-width: 500px) {
+    .item span {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    .item {
+        width: 120px;
+    }
+    .item span {
+        display: unset;
+    }
+    .item .MuiSvgIcon-root {
+        display: none;
+    }
+}

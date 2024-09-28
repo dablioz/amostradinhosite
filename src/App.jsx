@@ -1,6 +1,8 @@
 import { Router } from "./routes/routes";
-import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material";
+
+import "./App.css";
+
 function App() {
     const darkTheme = createTheme({
         palette: {
@@ -9,9 +11,11 @@ function App() {
     });
 
     return (
-        <ThemeProvider theme={darkTheme}>
-            <Router />
-        </ThemeProvider>
+        <div id="App">
+            <ThemeProvider theme={darkTheme}>
+                <Router />
+            </ThemeProvider>
+        </div>
     );
 }
 
