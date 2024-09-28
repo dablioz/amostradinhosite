@@ -1,29 +1,34 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar ,FreeMode } from "swiper/modules";
+import { Scrollbar, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/free-mode";
 
-import Curso from "./../Curso/Curso";
+import Curso from "../../Components/Curso/Curso";
+import caixa from "../../assets/caixa.jpg";
+import mpam from "../../assets/MPAM.jpg"
+import cmm from "../../assets/CMM.jpeg"
+
 import "./Cursos.css";
+
 function Cursos() {
     const i = [
-        { text: "caixa 2024" },
-        { text: "caixa 2024" },
-        { text: "caixa 2024" },
-        { text: "caixa 2024" },
+        { text: "caixa 2024", image: caixa, link: "https://caixa.cesgranrio.org.br/home" },
+        { text: "MPAM", image: mpam, link: "https://www.mpam.mp.br/"},
+        { text: "CMM", image: cmm, link: "https://www.cmm.am.gov.br/"},
     ];
-    const x = i.map(({ text }, i) => {
+
+    const x = i.map(({ text, image, link }, i) => {
         return (
             <SwiperSlide key={i}>
-                <Curso text={text} />
+                <Curso text={text} image={image} link={link}/>
             </SwiperSlide>
         );
     });
 
     return (
         <div className="container">
-            <h2>Concursos Federais</h2>
+            <h2>Concursos</h2>
 
             <Swiper
                 className="myswyper"
@@ -52,8 +57,6 @@ function Cursos() {
             >
                 {x}
             </Swiper>
-
-            <h2>Concursos Municipais</h2>
         </div>
     );
 }

@@ -61,7 +61,7 @@ function Navbar() {
 
                         <Link to="/cursos">
                             <Button size="large" className="item">
-                                <span id="cursostxt">Cursos</span>
+                                <span id="cursostxt">Concursos</span>
                                 <CollectionsBookmarkIcon id="cursos" />
                             </Button>
                         </Link>

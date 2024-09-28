@@ -17,6 +17,9 @@ body {
     margin: 0 auto;
 }
 
+*{
+    outline: none;
+}
 
 /* @media (prefers-color-scheme: light) {
     :root {

@@ -1,8 +1,6 @@
 #container {
     background-size: auto, cover;
     background-repeat: no-repeat, no-repeat;
-    background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
-        url("../../assets/banner-interna.jpg");
 
     background-position: center;
     min-width: 200px;
@@ -28,12 +26,4 @@
 .info {
     background-color: #16171e !important;
     margin: 0 10px 10px 0 !important;
-}
-
-.swiper{
-    border-radius: 25px; 
-}
-
-.swiper-slide{
-    width: fit-content;
 }

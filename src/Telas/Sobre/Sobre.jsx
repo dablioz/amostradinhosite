@@ -23,7 +23,8 @@ function Sobre() {
 
             <section id="contact">
                 <h2>Contact us</h2>
-                Envie um email para: wesleyfelipe1904@gmail.com para indicar melhorias!
+                Email: wesleyfelipe1904@gmail.com <br/>
+                Phone: {"(92) 9 93847331"}
             </section> 
 
         </div>

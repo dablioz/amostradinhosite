@@ -1,0 +1,22 @@
+#teste {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    background-image: url("../../assets/duolingo.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin: 0 auto;
+    width: 100%; 
+    height: calc(100vh - 80px);
+
+    opacity: .2; 
+    /*z-index: -1; */
+}
+
+#content{
+    /* margin-top: calc(100vh - 100px); */
+    background-color: #303030;
+    height: 400px;
+}
