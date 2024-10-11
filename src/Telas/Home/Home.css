@@ -15,8 +15,9 @@
     /*z-index: -1; */
 }
 
-#content{
+#page{
     /* margin-top: calc(100vh - 100px); */
     background-color: #303030;
-    height: 400px;
+    padding: 10px;
+    border-radius: 10px;
 }

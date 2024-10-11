@@ -3,20 +3,20 @@ import { useState } from "react";
 
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 
 import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
 import logo from "../../assets/logo_prev.png";
 import bobesponja from "../../assets/bobesponja.jpeg";
 import lucas from "../../assets/lucas.jpeg";
 import duolingo from "../../assets/duolingo.jpeg";
-import caique from "../../assets/caique.jpeg"
-import bizarro from "../../assets/bizarro.jpeg"
+import caique from "../../assets/caique.jpeg";
+import bizarro from "../../assets/bizarro.jpeg";
 
-import './Navbar.css'
+import "./Navbar.css";
 
 const style = {
     position: "absolute",
@@ -37,7 +37,7 @@ function Navbar() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const array = [bobesponja, lucas, duolingo,caique,bizarro];
+    const array = [bobesponja, lucas, duolingo, caique, bizarro];
 
     const random = Math.floor(Math.random() * array.length);
 
@@ -46,10 +46,19 @@ function Navbar() {
             <header>
                 <div id="marca-container">
                     <div id="marca">
-                        <img id="logo" src={logo} alt="logo" onClick={handleOpen} />
-                        <span>amostradinhosite</span>
+                        <Link to="/" id="fdp">
+                            <img id="logo" src={logo} alt="logo" />
+                        </Link>
+                        <span onClick={handleOpen}>GuiaConcursos</span>
+
+                        <Link to="/sobre">
+                            <IconButton className="item">
+                                <InfoOutlinedIcon id="sobre" sx={{fontSize: "30px"}}/>
+                            </IconButton>
+                        </Link>
                     </div>
                 </div>
+                {/* isso aqui era um menu
                 <div id="menu-container">
                     <div id="menu">
                         <Link to="/">
@@ -74,6 +83,7 @@ function Navbar() {
                         </Link>
                     </div>
                 </div>
+                */}
             </header>
             <Modal
                 open={open}

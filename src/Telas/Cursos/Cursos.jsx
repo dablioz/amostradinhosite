@@ -49,8 +49,7 @@ function Cursos() {
                     },
                 }} */
                 scrollbar={{
-                    draggable: true,
-                    hide: true,
+                    draggable: true
                 }}
                 freeMode={true}
                 modules={[FreeMode, Scrollbar]}

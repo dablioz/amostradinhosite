@@ -1,14 +1,14 @@
 #App {
     position: relative;
-    min-height: calc(100vh - 160px);
-    padding: 120px 0 40px 0;
+    min-height: calc(100vh - 135px); /*def: 120px*/ 
+    padding: 95px 0 40px 0; /* +40px top pro menu, default: 80px*/
     /* min-height: calc(100vh - 160px); */
 }
 
-.container {
+.cont {
     /* position: relative; */
     max-width: 1280px;
     width: 95%;
 
-    margin: 0 auto 20px;
+    margin: 0 auto;
 }

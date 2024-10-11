@@ -1,7 +1,7 @@
 import "./Sobre.css";
 function Sobre() {
     return (
-        <div className="container">
+        <div className="cont">
             <h2>Sobre nós</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -11,7 +11,7 @@ function Sobre() {
                 Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus.
                 Nam mattis, felis ut adipiscing.
             </p>
-            <h3>Nossa motivação</h3>
+            <h2>Nossa motivação</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                 eget ligula eu lectus lobortis condimentum. Aliquam nonummy

@@ -1,19 +1,16 @@
 import "./Home.css";
-import duolingo from "../../assets/duolingo.jpeg";
+import Cursos from "../Cursos/Cursos";
 function Home() {
     return (
-        <div className="container">
+        <div className="cont">
             {/* 
             <div id="bg">
                 <div id="teste"></div>
             </div> 
             */}
             
-            <div id="content">
-                <h2>Home</h2>
-                <p> 
-                    
-                </p>
+            <div id="page">
+                <Cursos/>
             </div>
         </div>
     );

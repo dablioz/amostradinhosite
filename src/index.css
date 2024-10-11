@@ -15,10 +15,20 @@
 
 body {
     margin: 0 auto;
+    
 }
 
 *{
     outline: none;
+    margin: 0;
+}
+
+p{
+    margin: 5px;
+}
+
+h2{
+    margin: 0 0 10px;
 }
 
 /* @media (prefers-color-scheme: light) {
