@@ -5,6 +5,7 @@ import Cursos from "../Telas/Cursos/Cursos.jsx";
 import Home from "../Telas/Home/Home.jsx";
 import Navbar from "../Components/Navbar/Navbar.jsx";
 import Footer from "../Components/Footer/Footer.jsx";
+import Login from "../Telas/Login/Login.jsx";
 
 export const Router = () => {
     return (
@@ -14,8 +15,9 @@ export const Router = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/sobre" element={<Sobre />} />
                 <Route path="/cursos" element={<Cursos />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
-            <Footer/>
+            <Footer />
         </BrowserRouter>
     );
 };

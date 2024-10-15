@@ -11,24 +11,25 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-} 
-
-body {
-    margin: 0 auto;
-    
 }
 
-*{
+/* body {
+    margin: 0 auto;
+    
+} */
+
+* {
     outline: none;
     margin: 0;
 }
 
-p{
-    margin: 5px;
+a {
+    font-weight: 500;
+    color: unset;
+    text-decoration: inherit;
 }
-
-h2{
-    margin: 0 0 10px;
+a:hover {
+    color: unset;
 }
 
 /* @media (prefers-color-scheme: light) {

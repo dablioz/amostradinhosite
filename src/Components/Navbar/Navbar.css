@@ -26,8 +26,8 @@ header {
 }
 
 #logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     padding: 15px;
 }
 
@@ -59,11 +59,6 @@ header {
 }
 .item:hover {
     background-color: #404040;
-}
-
-#jumpscare {
-    width: calc(100vw - 120px);
-    max-width: 600px;
 }
 
 /*isso aqui é pro menu

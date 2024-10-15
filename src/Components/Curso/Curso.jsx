@@ -4,7 +4,7 @@ import "./Curso.css";
 function Curso(props) {
     return (
         <div
-            id="container"
+            id="card"
             style={{
                 backgroundImage: `radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url(${props.image})`,
             }}

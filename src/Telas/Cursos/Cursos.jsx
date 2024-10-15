@@ -27,7 +27,7 @@ function Cursos() {
     });
 
     return (
-        <div className="container">
+        <div id="cursos">
             <h2>Concursos</h2>
 
             <Swiper
