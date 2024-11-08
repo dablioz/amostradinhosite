@@ -7,7 +7,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
-import logo from "../../assets/logo_prev.png";
+import logo from "../../assets/guia_concursos.png";
 
 import "./Navbar.css";
 
@@ -17,20 +17,34 @@ function Navbar() {
             <header>
                 <div id="marca-container">
                     <div id="marca">
+
+                        {/** tu vai fazer um haburguer pra esse menu */ }
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
                         </Link>
 
                         <Link to="/Sobre">
-                            <span>GuiaConcursos</span>
+                            <span className="item">questoes</span>
                         </Link>
-                        
+                        <a href="">
+                            <span className="item">concursos</span>
+                        </a>
+
+                        <a href="">
+                            <span className="item">guias</span>
+                        </a>
+
+                        <a href="">
+                            <span className="item">orgaos</span>
+                        </a>
+
+                        <a href="">
+                            <span className="item">bancas</span>
+                        </a>
+
                         <Link to="/login">
-                            <IconButton className="item">
-                                <AccountCircleOutlinedIcon
-                                    id="sobre"
-                                    fontSize="large"
-                                />
+                            <IconButton>
+                                <AccountCircleOutlinedIcon fontSize="large" />
                             </IconButton>
                         </Link>
                     </div>

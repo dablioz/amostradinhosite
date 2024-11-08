@@ -95,9 +95,9 @@ function Login() {
                 <div className="toggle-container">
                     <div className="toggle">
                         <div className="toggle-panel toggle-left">
-                            <h1>Bem-vindo de volta!</h1>
+                            <h1>Seja Bem-vindo !</h1>
                             <p>
-                                Insira seus dados pessoais para utilizar todas
+                                Insira seus dados para utilizar todas
                                 as funcionalidades do site
                             </p>
                             <button
@@ -111,7 +111,7 @@ function Login() {
                         <div className="toggle-panel toggle-right">
                             <h1>Olá, Amigo!</h1>
                             <p>
-                                Registre-se com seus dados pessoais para
+                                Registre-se com seus dados para
                                 utilizar todas as funcionalidades do site
                             </p>
                             <button

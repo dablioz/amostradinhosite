@@ -1,12 +1,13 @@
 #App {
     position: relative;
     min-height: 100vh; /*def: 120px*/ 
-    padding: 80px 0 40px 0; /* +40px top pro menu, default: 80px*/
+    padding: 80px 0 109px 0; /* +40px top pro menu, default: 80px*/
     /* min-height: calc(100vh - 160px); */
 }
 
 .cont {
     /* position: relative; */
+    height: calc(100vh - 189px - 30px);
     max-width: 1280px;
     width: 95%;
 

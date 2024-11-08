@@ -13,9 +13,13 @@ export const Router = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/sobre" element={<Sobre />} />
-                <Route path="/cursos" element={<Cursos />} />
+                <Route path="/questoes" />
+                <Route path="/concursos" element={<Cursos />} />
+                <Route path="/guias" />
+                <Route path="/orgaos" />
+                <Route path="/bancas" />
                 <Route path="/login" element={<Login />} />
+                <Route path="/sobre" element={<Sobre />} />
             </Routes>
             <Footer />
         </BrowserRouter>

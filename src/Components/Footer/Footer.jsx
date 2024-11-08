@@ -39,34 +39,44 @@ function Footer() {
 
     const random = Math.floor(Math.random() * array.length);
     return (
-        <footer id="pezinho">
-            <span onClick={handleOpen}>
-                {"Made with ❤️ by:  wzley77 | "}
-            </span>
-            <div id="links">
-                <a target="_blank" href="https://www.instagram.com/wzley77/">
-                    <InstagramIcon />
-                </a>
-                <a target="_blank" href="https://github.com/dablioz/">
-                    <GitHubIcon />
-                </a>
+        <>
+            <footer id="pezinho">
+                <div id="c">
+                    <div id="left">
+                        <div className="aaaa">
+                            <span>Quem somos</span> 
+                            <span>Trabalhe Conosco</span>
+                        </div>
+                        <div className="aaaa">
+                            <span>Apoie o Projeto</span> 
+                            <span>Dúvidas Frequentes</span>
+                        </div>
+                    </div>
+                    <div id="right">
+                        <span>Fale conosco</span>
+                        <div id="links">
+                            <a target="_blank" href="https://www.instagram.com/wzley77/">
+                                <InstagramIcon />
+                            </a>
 
-                <a target="_blank" href=" https://www.linkedin.com/in/wzley/">
-                    <LinkedInIcon />
-                </a>
-            </div>
-            
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
+                            <a target="_blank" href="https://github.com/dablioz/">
+                                <GitHubIcon />
+                            </a>
+
+                            <a target="_blank" href=" https://www.linkedin.com/in/wzley/">
+                                <LinkedInIcon />
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                <span onClick={handleOpen}>{"Made with ❤️ by:  wzley77"}</span>
+            </footer>
+            <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                 <Box sx={style}>
                     <img id="jumpscare" src={array[random]} alt="" />
                 </Box>
             </Modal>
-        </footer>
+        </>
     );
 }
 
