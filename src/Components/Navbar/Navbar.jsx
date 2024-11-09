@@ -18,30 +18,31 @@ function Navbar() {
                 <div id="marca-container">
                     <div id="marca">
 
-                        {/** tu vai fazer um haburguer pra esse menu */ }
+                        {/** tu vai fazer um haburguer pra esse menu */}
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
                         </Link>
 
-                        <Link to="/Sobre">
-                            <span className="item">questoes</span>
-                        </Link>
-                        <a href="">
-                            <span className="item">concursos</span>
-                        </a>
+                        <div>
+                            <Link to="/Sobre">
+                                <span className="item">questoes</span>
+                            </Link>
+                            <a href="">
+                                <span className="item">concursos</span>
+                            </a>
 
-                        <a href="">
-                            <span className="item">guias</span>
-                        </a>
+                            <a href="">
+                                <span className="item">guias</span>
+                            </a>
 
-                        <a href="">
-                            <span className="item">orgaos</span>
-                        </a>
+                            <a href="">
+                                <span className="item">orgaos</span>
+                            </a>
 
-                        <a href="">
-                            <span className="item">bancas</span>
-                        </a>
-
+                            <a href="">
+                                <span className="item">bancas</span>
+                            </a>
+                        </div>
                         <Link to="/login">
                             <IconButton>
                                 <AccountCircleOutlinedIcon fontSize="large" />

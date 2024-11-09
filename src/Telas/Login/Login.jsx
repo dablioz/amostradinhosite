@@ -1,7 +1,31 @@
-import { useState } from "react";
+
 import "./Login.css";
+import { useState, useContext, useEffect } from "react";
+ 
+import { AuthGoogleContext } from "../../context/authGoogle";
+
+
+
 
 function Login() {
+    const { createAccount, signInAccount, signInGoogle } = useContext(AuthGoogleContext)
+
+    const [user, setUser] = useState([]);
+    const [email, setEmail] = useState([]);
+    const [password, setPassword] = useState([]);
+
+    async function login() {
+        console.log(userField.value, emailField.value, passwordField.value)
+        await createAccount(userField.value, emailField.value, passwordField.value)
+    
+        setTimeout(
+            () => {
+                signInAccount(emailField.value, passwordField.value)
+            },
+            500
+        );
+    }
+
     const [active, setActive] = useState(false);
 
     const handleActive = () => {
@@ -20,7 +44,7 @@ function Login() {
                 id="container"
             >
                 <div className="form-container sign-up">
-                    <form action="register.php" method="POST">
+                     <form /*action="register.php" method="POST"*/ > 
                         <h1>Criar Conta</h1>
                         <div className="social-icons">
                             <a href="#" className="icon">
@@ -37,29 +61,22 @@ function Login() {
                             </a>
                         </div>
                         <span>ou use seu e-mail para registro</span>
-                        <input
-                            type="text"
-                            name="nome"
-                            placeholder="Nome"
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="E-mail"
-                            required
-                        />
-                        <input
-                            type="password"
-                            name="senha"
-                            placeholder="Senha"
-                            required
-                        />
-                        <button type="submit">Registrar</button>
+
+                        <input type="text" value={user} onChange={(e) => setUser(e.target.value)} name="nome" id="userField" placeholder="Nome" required />
+
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="emailField" placeholder="E-mail" required />
+
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="senha" id="passwordField" placeholder="Senha" required />
+
+                        <button /* type="submit" */ onClick={login}>Registrar</button>
                     </form>
                 </div>
+
+
+
+
                 <div className="form-container sign-in">
-                    <form action="login.php" method="POST">
+                    <form /* action="login.php" method="POST" */>
                         <h1>Entrar</h1>
                         <div className="social-icons">
                             <a href="#" className="icon">
@@ -76,22 +93,22 @@ function Login() {
                             </a>
                         </div>
                         <span>ou use seu e-mail e senha</span>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="E-mail"
-                            required
-                        />
-                        <input
-                            type="password"
-                            name="senha"
-                            placeholder="Senha"
-                            required
-                        />
+
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} id="emailField" name="email" placeholder="E-mail" required />
+
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="emailField" name="senha" placeholder="Senha" required />
+                        {console.log(user, password, email)}
                         <a href="#">Esqueceu sua senha?</a>
-                        <button type="submit">Entrar</button>
+
+                        <button /* type="submit" */ onClick={login}>Entrar</button>
                     </form>
                 </div>
+
+
+
+
+
+
                 <div className="toggle-container">
                     <div className="toggle">
                         <div className="toggle-panel toggle-left">
@@ -100,11 +117,7 @@ function Login() {
                                 Insira seus dados para utilizar todas
                                 as funcionalidades do site
                             </p>
-                            <button
-                                className="hidden"
-                                id="login"
-                                onClick={() => handleOff()}
-                            >
+                            <button className="hidden" id="login" onClick={() => handleOff()} >
                                 Entrar
                             </button>
                         </div>
@@ -114,11 +127,7 @@ function Login() {
                                 Registre-se com seus dados para
                                 utilizar todas as funcionalidades do site
                             </p>
-                            <button
-                                className="hidden"
-                                id="register"
-                                onClick={() => handleActive()}
-                            >
+                            <button className="hidden" id="register" onClick={() => handleActive()} >
                                 Registrar
                             </button>
                         </div>

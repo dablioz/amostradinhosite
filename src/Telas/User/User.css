@@ -1,0 +1,67 @@
+#userCont {
+    padding-bottom: 20px;
+}
+
+#usercard {
+    width: 100%;
+
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.664);
+}
+
+#usercard div {
+    width: 90%;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    place-items: flex-end;
+}
+
+#usercard div h2 {
+    line-height: 50px;
+}
+
+#userbg {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+}
+
+#pfp {
+    max-height: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#usercard * {
+    z-index: 1;
+}
+
+
+.MuiToggleButton-root {
+    margin: 0 5px !important;
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 20px auto 0;
+}
+
+@media (min-width: 900px) {
+    #userbg {
+        height: 200px;
+    }
+
+    #usercard div {
+        height: 250px;
+    }
+}

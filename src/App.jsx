@@ -1,6 +1,7 @@
 import { Router } from "./routes/routes";
 import { createTheme, ThemeProvider } from "@mui/material";
 
+import { AuthGoogleProvider } from "../src/context/authGoogle";
 import "./App.css";
 
 function App() {
@@ -12,9 +13,11 @@ function App() {
 
     return (
         <div id="App">
-            <ThemeProvider theme={darkTheme}>
-                <Router />
-            </ThemeProvider>
+            <AuthGoogleProvider>
+                <ThemeProvider theme={darkTheme}>
+                    <Router />
+                </ThemeProvider>
+            </AuthGoogleProvider>
         </div>
     );
 }

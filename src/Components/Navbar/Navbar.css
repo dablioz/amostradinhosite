@@ -63,6 +63,12 @@ header {
     }
 }
 
+@media (max-width: 630px){
+    #marca div{
+        display: none;
+    }
+}
+
 /*isso aqui é pro menu
 
 
