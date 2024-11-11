@@ -108,7 +108,7 @@ export const AuthGoogleProvider = ({ children }) => {
                 //console.log(errorMessage)
             });
 
-        /* return <Navigate to="/" />; */
+        return <Navigate to="/" />;
     };
 
     function signOut() {
@@ -119,7 +119,8 @@ export const AuthGoogleProvider = ({ children }) => {
         return <Navigate to="/" />;
     }
 
-    /*     const xgUser = async (nome) => {
+    
+const xgUser = async (nome) => {
 
         await updateProfile(auth.currentUser, {
             displayName: nome
@@ -132,14 +133,39 @@ export const AuthGoogleProvider = ({ children }) => {
 
         console.log('Success')
         toast.success('Nome de usuário alterado')
-    } */
+    }
 
+    const xgPfp = async (file) => {
+
+        await uploadBytes(ref(storage, 'users_pfp/' + user.uid), file)
+            .then((snapshot) => {
+                console.log("Success")
+            })
+
+        await getDownloadURL(ref(storage, 'users_pfp/' + user.uid))
+            .then(async (url) => {
+                await updateProfile(auth.currentUser, {
+                    photoURL: url
+                })
+                console.log('Success')
+                toast.success('Foto de perfil alterada')
+            })
+            .catch((error) => {
+                console.log(error)
+                // Handle any errors
+            });
+
+
+        setUser(auth.currentUser)
+        localStorage.setItem("@AuthFirebase:user", JSON.stringify(auth.currentUser));
+    }
     return (
         <AuthGoogleContext.Provider
             value={{
                 user,
                 signed: !!user,
-
+                xgUser,
+                xgPfp
                 signInGoogle,
                 createAccount,
                 signInAccount,
