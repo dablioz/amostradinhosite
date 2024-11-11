@@ -17,7 +17,7 @@ function EditUser() {
     const save = () => {
 
         if (username == '' && pfp == '') {
-            toast.info('Nenhuma alteração realizada')
+            /*toast.info('Nenhuma alteração realizada')*/
             return 0
         }
 
