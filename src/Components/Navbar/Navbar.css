@@ -64,7 +64,7 @@ header {
 
 @media (max-width: 810px) {
     #logo {
-        content: url("src/assets/logo_square.png");
+        content: url("../../assets/logo_square.png");
     }
 }
 
