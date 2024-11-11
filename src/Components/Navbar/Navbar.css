@@ -14,7 +14,7 @@ header {
 #marca {
     display: flex;
     height: 80px;
-    width: 95%;
+    width: 90%;
     max-width: 1280px;
     margin: 0 auto;
 
@@ -22,6 +22,7 @@ header {
     justify-content: space-between;
 
     & .item {
+        transition: 100ms;
         border-radius: 12px;
         padding: 7px 10px;
         text-align: center;
@@ -44,27 +45,30 @@ header {
         height: 100%;
     }
 }
-
-#menu-container {
+#usrIcon{
+    height: 35px;
+    border-radius: 50%;
+}
+/*#menu-container {
     padding: 0;
     display: flex;
     justify-content: space-around;
 }
 
-#menu {
+ #menu {
     background-color: #303030;
     border-radius: 0 0 5px 5px;
     padding: 0;
-}
+} */
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
     #logo {
         content: url("src/assets/logo_square.png");
     }
 }
 
-@media (max-width: 630px){
-    #marca div{
+@media (max-width: 660px) {
+    #marca div {
         display: none;
     }
 }

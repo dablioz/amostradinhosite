@@ -1,50 +1,40 @@
-
 import "./Login.css";
 import { useState, useContext, useEffect } from "react";
- 
+
 import { AuthGoogleContext } from "../../context/authGoogle";
 
-
-
-
 function Login() {
-    const { createAccount, signInAccount, signInGoogle } = useContext(AuthGoogleContext)
+    const { createAccount, signInAccount, signInGoogle } = useContext(AuthGoogleContext);
 
     const [user, setUser] = useState([]);
     const [email, setEmail] = useState([]);
     const [password, setPassword] = useState([]);
 
     async function login() {
-        console.log(userField.value, emailField.value, passwordField.value)
-        await createAccount(userField.value, emailField.value, passwordField.value)
-    
-        setTimeout(
-            () => {
-                signInAccount(emailField.value, passwordField.value)
-            },
-            500
-        );
+        console.log(user, email, password);
+        await createAccount(user, email, password);
+
+        setTimeout(() => {
+            signInAccount(email, password);
+        }, 100);
     }
 
     const [active, setActive] = useState(false);
 
     const handleActive = () => {
         setActive(true);
-        console.log(active)
+        console.log(active);
     };
     const handleOff = () => {
         setActive(false);
-        console.log(active)
+        console.log(active);
     };
 
     return (
         <div id="LoginCont">
-            <div
-                className={` container ${active ? " active" : ""}`}
-                id="container"
-            >
+            <div className={` container ${active ? " active" : ""}`} id="container">
                 <div className="form-container sign-up">
-                     <form /*action="register.php" method="POST"*/ > 
+                    <div /*action="register.php" method="POST"*/>
                         <h1>Criar Conta</h1>
                         <div className="social-icons">
                             <a href="#" className="icon">
@@ -69,14 +59,11 @@ function Login() {
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="senha" id="passwordField" placeholder="Senha" required />
 
                         <button /* type="submit" */ onClick={login}>Registrar</button>
-                    </form>
+                    </div>
                 </div>
 
-
-
-
                 <div className="form-container sign-in">
-                    <form /* action="login.php" method="POST" */>
+                    <div /* action="login.php" method="POST" */>
                         <h1>Entrar</h1>
                         <div className="social-icons">
                             <a href="#" className="icon">
@@ -96,38 +83,26 @@ function Login() {
 
                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} id="emailField" name="email" placeholder="E-mail" required />
 
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="emailField" name="senha" placeholder="Senha" required />
-                        {console.log(user, password, email)}
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="passwordField" name="senha" placeholder="Senha" required />
                         <a href="#">Esqueceu sua senha?</a>
 
                         <button /* type="submit" */ onClick={login}>Entrar</button>
-                    </form>
+                    </div>
                 </div>
-
-
-
-
-
 
                 <div className="toggle-container">
                     <div className="toggle">
                         <div className="toggle-panel toggle-left">
                             <h1>Seja Bem-vindo !</h1>
-                            <p>
-                                Insira seus dados para utilizar todas
-                                as funcionalidades do site
-                            </p>
-                            <button className="hidden" id="login" onClick={() => handleOff()} >
+                            <p>Insira seus dados para utilizar todas as funcionalidades do site</p>
+                            <button className="hidden" id="login" onClick={() => handleOff()}>
                                 Entrar
                             </button>
                         </div>
                         <div className="toggle-panel toggle-right">
                             <h1>Olá, Amigo!</h1>
-                            <p>
-                                Registre-se com seus dados para
-                                utilizar todas as funcionalidades do site
-                            </p>
-                            <button className="hidden" id="register" onClick={() => handleActive()} >
+                            <p>Registre-se com seus dados para utilizar todas as funcionalidades do site</p>
+                            <button className="hidden" id="register" onClick={() => handleActive()}>
                                 Registrar
                             </button>
                         </div>

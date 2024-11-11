@@ -8,6 +8,7 @@ import Footer from "../Components/Footer/Footer.jsx";
 import Login from "../Telas/Login/Login.jsx";
 import User from "../Telas/User/User.jsx"
 import { PrivateRoutes, AuthRoute } from "./index.jsx";
+import EditUser from "../Telas/User/EditUser.jsx";
 export const Router = () => {
     return (
         <BrowserRouter>
@@ -30,7 +31,7 @@ export const Router = () => {
 
                 <Route path="/user" element={<PrivateRoutes />}>
                     <Route path="/user" element={<User />} />
-
+                    <Route path="/user/edit" element={<EditUser />} />
                 </Route>
 
                 <Route path="/login" element={<Login />} />

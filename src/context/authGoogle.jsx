@@ -1,58 +1,34 @@
-import { app } from "../service/firebaseconfig.jsx";
+import { toast } from "react-toastify";
 import { Navigate } from "react-router-dom";
 
 import "firebase/firestore";
-import {
-    GoogleAuthProvider,
-    getAuth,
-    signInWithPopup,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    updateProfile
-} from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
 
-import {
-    getFirestore,
-    doc,
-    deleteDoc,
-    getDoc,
-    getDocs,
-    setDoc,
-    collection,
+import { getFirestore, doc, deleteDoc, getDoc, getDocs, setDoc, collection } from "firebase/firestore";
 
-} from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-
-import {
-    getStorage,
-    ref,
-    uploadBytes,
-    getDownloadURL,
-} from "firebase/storage";
-
-import { toast } from 'react-toastify';
+import { app } from "../service/firebaseconfig.jsx";
 
 const provider = new GoogleAuthProvider();
 
 export const AuthGoogleProvider = ({ children }) => {
-
+    console.log(app)
     const db = getFirestore(app);
     const auth = getAuth(app);
-    const storage = getStorage(app)
-
-    const userRef = collection(db, "users")
+    const storage = getStorage(app);
+    const userRef = collection(db, "users");
 
     const storageToken = localStorage.getItem("@AuthFirebase:token");
 
-    const storageUser = JSON.parse(localStorage.getItem("@AuthFirebase:user"))
+    const storageUser = JSON.parse(localStorage.getItem("@AuthFirebase:user"));
     const [user, setUser] = useState(storageUser);
-    
 
     useEffect(() => {
         if (storageToken && storageUser) {
-            setUser(storageUser); 
+            setUser(storageUser);
             // console.log(children)
         }
     }, [storageToken]);
@@ -61,10 +37,9 @@ export const AuthGoogleProvider = ({ children }) => {
         const docSnap = await getDoc(doc(userRef, u.uid));
 
         if (!docSnap.exists() || u.displayName != docSnap.displayName) {
-
             setDoc(doc(userRef, u.uid), {
                 username: u.displayName || "user",
-            })
+            });
         }
     }
 
@@ -82,8 +57,7 @@ export const AuthGoogleProvider = ({ children }) => {
 
                 console.log(u);
 
-                checkUser(u)
-
+                checkUser(u);
             })
             .catch((error) => {
                 //console.log(errorMessage)
@@ -96,21 +70,20 @@ export const AuthGoogleProvider = ({ children }) => {
             .then((result) => {
                 const u = result.user;
 
-                if (username != '') {
+                if (username != "") {
                     updateProfile(u, {
                         displayName: username,
-                    })
+                    });
                 }
 
-                checkUser(u)
+                checkUser(u);
 
                 console.log(u);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 // ..
-                if (errorCode == "auth/invalid-email")
-                    toast.error("Email ou senha Inválidos");
+                if (errorCode == "auth/invalid-email") toast.error("Email ou senha Inválidos");
 
                 console.log(error);
             });
@@ -129,8 +102,7 @@ export const AuthGoogleProvider = ({ children }) => {
 
                 console.log(u);
 
-                checkUser(u)
-
+                checkUser(u);
             })
             .catch((error) => {
                 //console.log(errorMessage)
@@ -147,7 +119,7 @@ export const AuthGoogleProvider = ({ children }) => {
         return <Navigate to="/" />;
     }
 
-/*     const xgUser = async (nome) => {
+    /*     const xgUser = async (nome) => {
 
         await updateProfile(auth.currentUser, {
             displayName: nome
@@ -172,8 +144,7 @@ export const AuthGoogleProvider = ({ children }) => {
                 createAccount,
                 signInAccount,
                 signOut,
-            }}
-        >
+            }}>
             {children}
         </AuthGoogleContext.Provider>
     );

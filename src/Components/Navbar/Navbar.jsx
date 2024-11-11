@@ -8,16 +8,21 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
 import logo from "../../assets/guia_concursos.png";
-
+import { AuthGoogleContext } from "../../context/authGoogle";
 import "./Navbar.css";
+import { useContext } from "react";
 
 function Navbar() {
+    const { user, signed } = useContext(AuthGoogleContext);
+    function useri() {
+        /*  */
+        return signed ? <img id="usrIcon" src={user.photoURL || "https://tinyurl.com/5kub7nce"} /> : <AccountCircleOutlinedIcon fontSize="large" />;
+    }
     return (
         <>
             <header>
                 <div id="marca-container">
                     <div id="marca">
-
                         {/** tu vai fazer um haburguer pra esse menu */}
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
@@ -43,10 +48,8 @@ function Navbar() {
                                 <span className="item">bancas</span>
                             </a>
                         </div>
-                        <Link to="/login">
-                            <IconButton>
-                                <AccountCircleOutlinedIcon fontSize="large" />
-                            </IconButton>
+                        <Link to="/user">
+                            <IconButton>{useri()}</IconButton>
                         </Link>
                     </div>
                 </div>
