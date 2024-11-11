@@ -165,7 +165,7 @@ const xgUser = async (nome) => {
                 user,
                 signed: !!user,
                 xgUser,
-                xgPfp
+                xgPfp,
                 signInGoogle,
                 createAccount,
                 signInAccount,
