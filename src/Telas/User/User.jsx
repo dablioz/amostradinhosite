@@ -2,12 +2,12 @@ import { AuthGoogleContext } from "../../context/authGoogle";
 import { useContext, useEffect, useState } from "react";
 import { Button, ToggleButtonGroup, ToggleButton } from "@mui/material";
 
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
+import Concurso from "../../Components/Concurso/Concurso";
 
+import "./User.css";
 
-import "./User.css"; 
-  
 function User() {
 
 	// const Fuse = require('fuse.js')
@@ -34,7 +34,25 @@ function User() {
 
 				</div>
 
-			</div> 
+			</div>
+
+
+
+
+
+			<Concurso
+				image={"https://tinyurl.com/ubyd83bp"}
+				titulo={"meu cacete"}
+				edital={"28 / 02 / 24"}
+				banca={"Instituto Quadrix"}
+				fiminsc={"08/04/2024"}
+				regiao={"Estadual"}
+			/>
+
+
+
+
+
 
 			<div id="buttons">
 				<Button id="sair" onClick={signOut} variant="outlined" color="error">

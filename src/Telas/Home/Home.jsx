@@ -4,7 +4,7 @@ import Cursos from "../Cursos/Cursos";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from "@mui/material";
-
+import Concurso from '../../Components/Concurso/Concurso'
 function Home() {
     return (
         <div id="home-cont" className="cont">
@@ -14,23 +14,23 @@ function Home() {
             </div> 
             */}
 
-            <div id="ll"> 
+            <div id="ll">
                 <div id="pesquisa">
                     <div id="search">
-                        <SearchIcon id=" icon"/>
+                        <SearchIcon id=" icon" />
                     </div>
                     <input type="text" />
                 </div>
-                <br/>
+                <br />
                 <h1>Seu melhor amigo quando se pensa em concursos</h1>
-                <br/> 
+                <br />
                 <p>Sua aprovação começa aqui, registre-se e estude de graça</p>
-                <br/>
+                <br />
                 <button><b>COMEÇAR AGORA</b></button>
             </div>
             <div id="rr">
                 <img id="home_img" src={home_img} alt="" />
-            </div>
+            </div> 
         </div>
     );
 }

@@ -1,0 +1,44 @@
+#Concurso-cont{
+    display: flex; 
+    align-items: center;
+    border-radius: 15px; 
+    background-color: rgb(135, 135, 135);
+    & #image{
+        height: 74px;
+        border-radius: 015px;
+        margin: 0 6px;
+    }
+    & #content{
+        width: 100%;
+    } 
+    & #end{  
+        margin: 0 10px; 
+    }
+}
+
+#Concurso{ 
+    display: flex;
+    justify-content: space-between;
+
+    & #left, & #right{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#coll{
+    background-color: rgb(135, 135, 135);
+    border-radius: 0 0 15px 15px;
+}
+
+#coll #teste{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+/* .MuiCollapse-wrapperInner{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+} */
