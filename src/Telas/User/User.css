@@ -44,9 +44,8 @@
     z-index: 1;
 }
 
-
-.MuiToggleButton-root {
-    margin: 0 5px !important;
+#user-data{
+    color: white;
 }
 
 #buttons {

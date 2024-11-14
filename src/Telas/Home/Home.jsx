@@ -20,12 +20,12 @@ function Home() {
                         <SearchIcon id=" icon" />
                     </div>
                     <input type="text" />
-                </div>
-                <br />
-                <h1>Seu melhor amigo quando se pensa em concursos</h1>
-                <br />
-                <p>Sua aprovação começa aqui, registre-se e estude de graça</p>
-                <br />
+                </div><br />
+                
+                <h1>Seu melhor amigo quando se pensa em concursos</h1> <br />
+                
+                <p>Sua aprovação começa aqui, registre-se e estude de graça</p><br />
+                
                 <button><b>COMEÇAR AGORA</b></button>
             </div>
             <div id="rr">

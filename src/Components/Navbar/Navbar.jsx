@@ -1,23 +1,26 @@
+import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { Button, IconButton } from "@mui/material";
+import { Drawer, IconButton, List, ListItem, ListItemText } from "@mui/material";
 
-import HomeIcon from "@mui/icons-material/Home";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
+import MenuIcon from "@mui/icons-material/Menu";
+import { useContext } from "react";
 import logo from "../../assets/guia_concursos.png";
 import { AuthGoogleContext } from "../../context/authGoogle";
 import "./Navbar.css";
-import { useContext } from "react";
-
 function Navbar() {
     const { user, signed } = useContext(AuthGoogleContext);
     function useri() {
         /*  */
         return signed ? <img id="usrIcon" src={user.photoURL || "https://tinyurl.com/5kub7nce"} /> : <AccountCircleOutlinedIcon fontSize="large" />;
     }
+    const [open, setOpen] = React.useState(false);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
     return (
         <>
             <header>
@@ -48,11 +51,34 @@ function Navbar() {
                                 <span className="item">bancas</span>
                             </a>
                         </div>
-                        <Link to="/user">
-                            <IconButton>{useri()}</IconButton>
-                        </Link>
+                        <div id="right">
+                            <IconButton onClick={toggleDrawer(true)}>{useri()}</IconButton>
+                            {/* <Link to="/user">
+                            </Link> */}
+                            <IconButton fontSize="large" id="hamburguer_menu">
+                                <MenuIcon fontSize="large" />
+                            </IconButton>
+                        </div>
                     </div>
                 </div>
+                <Drawer open={open} onClose={toggleDrawer(false)} anchor="right" ModalProps={{ keepMounted: true }}>
+                    <List>
+                        <img src={user.photoURL || "https://tinyurl.com/5kub7nce"} id="pfp" />
+                        <ListItem>
+                            <ListItemText>sarrada no ar</ListItemText>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText>sarrada no ar</ListItemText>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText>sarrada no ar</ListItemText>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText>sarrada no ar</ListItemText>
+                        </ListItem>
+                    </List>
+                </Drawer>
+
                 {/* isso aqui era um menu
                 <div id="menu-container">
                     <div id="menu">

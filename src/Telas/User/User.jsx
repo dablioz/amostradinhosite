@@ -42,7 +42,7 @@ function User() {
 
 			<Concurso
 				image={"https://tinyurl.com/ubyd83bp"}
-				titulo={"meu cacete"}
+				titulo={"xalalá"}
 				edital={"28 / 02 / 24"}
 				banca={"Instituto Quadrix"}
 				fiminsc={"08/04/2024"}

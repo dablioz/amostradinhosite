@@ -10,11 +10,12 @@
     flex-direction: column;
 }
 
-#pfp {
-    margin-top: 20px;
+#editUserField{
+    color: black;
 }
 
 #editUserFieldCont {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -22,7 +23,7 @@
     filter: brightness(0.8);
 }
 
-#pfplabel{
+#pfplabel{ 
     align-self: center;
 }
 label{

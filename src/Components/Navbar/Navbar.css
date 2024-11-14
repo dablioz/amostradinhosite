@@ -12,6 +12,7 @@ header {
 }
 
 #marca {
+    color: white;
     display: flex;
     height: 80px;
     width: 90%;
@@ -36,6 +37,10 @@ header {
     & .item:hover {
         background-color: #3e5e6b;
     }
+    & #right {
+        display: flex;
+        place-items: center;
+    }
 }
 
 #fdp {
@@ -45,11 +50,108 @@ header {
         height: 100%;
     }
 }
-#usrIcon{
+#usrIcon {
     height: 35px;
     width: 35px;
     border-radius: 50%;
+    object-fit: cover;
 }
+
+@media (max-width: 860px) {
+    #logo {
+        content: url("../../assets/logo_square.png");
+    }
+}
+
+@media (max-width: 660px) {
+    #marca > div {
+        display: none;
+    }
+}
+
+#hamburguer_menu {
+    margin-left: 10px;
+    display: none;
+    visibility: hidden;
+}
+
+@media (max-width: 660px) {
+    #right > #hamburguer_menu {
+        display: flex;
+        visibility: visible;
+    }
+}
+/*teeeeeeeeeeeeeste*/
+/* 
+.hamburger-menu {
+    display: none;
+    visibility: hidden;
+}
+
+#menu__toggle {
+    display: none;
+    opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    margin-top: 10px;
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(-90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+}
+
+.menu__btn {
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #d6d6d6;
+    transition-duration: 0.3s;
+}
+
+.menu__btn > span::before {
+    content: "";
+    top: 10px;
+}
+
+.menu__btn > span::after {
+    content: "";
+    top: 20px;
+}
+.menu__btn:hover > span,
+.menu__btn:hover > span::before,
+.menu__btn:hover > span::after {
+    background-color: #ffffff;
+}
+@media (max-width: 660px) {
+    .hamburger-menu {
+        display: unset;
+        visibility: visible;
+    }
+}
+    */
 /*#menu-container {
     padding: 0;
     display: flex;
@@ -61,19 +163,6 @@ header {
     border-radius: 0 0 5px 5px;
     padding: 0;
 } */
-
-@media (max-width: 810px) {
-    #logo {
-        content: url("../../assets/logo_square.png");
-    }
-}
-
-@media (max-width: 660px) {
-    #marca div {
-        display: none;
-    }
-}
-
 /*isso aqui é pro menu
 
 
