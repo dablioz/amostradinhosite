@@ -4,7 +4,6 @@ import Cursos from "../Cursos/Cursos";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from "@mui/material";
-import Concurso from '../../Components/Concurso/Concurso'
 function Home() {
     return (
         <div id="home-cont" className="cont">

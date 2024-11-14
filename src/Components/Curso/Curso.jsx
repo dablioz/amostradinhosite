@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import "./Curso.css";
 
-function Curso(props) {
+export function Curso(props) {
     return (
         <div
             id="card"

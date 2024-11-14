@@ -1,0 +1,12 @@
+{
+    "Concursos":{
+        "MPAM":{
+            "questoes": {
+                "um":500,
+                "dois":"segunda guerra mundial"
+            }
+        }
+    }
+}
+
+Concursos.MPAM.questoes[0]

@@ -1,20 +1,22 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { Drawer, IconButton, List, ListItem, ListItemText } from "@mui/material";
-
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-
-import MenuIcon from "@mui/icons-material/Menu";
+import { Button, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemButton } from "@mui/material";
 import { useContext } from "react";
 import logo from "../../assets/guia_concursos.png";
 import { AuthGoogleContext } from "../../context/authGoogle";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import "./Navbar.css";
 function Navbar() {
     const { user, signed } = useContext(AuthGoogleContext);
-    function useri() {
+    function useri(type) {
         /*  */
-        return signed ? <img id="usrIcon" src={user.photoURL || "https://tinyurl.com/5kub7nce"} /> : <AccountCircleOutlinedIcon fontSize="large" />;
+        if (type) {
+            return signed ? <img id="usrIcon" src={user.photoURL || "https://tinyurl.com/5kub7nce"} /> : <AccountCircleOutlinedIcon fontSize="large" />;
+        } else {
+            return signed ? <img id="pfp" src={user.photoURL || "https://tinyurl.com/5kub7nce"} /> : <Button variant="contained">Entrar</Button>;
+        }
     }
     const [open, setOpen] = React.useState(false);
 
@@ -30,14 +32,14 @@ function Navbar() {
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
                         </Link>
-
+                        {/*                         
                         <div>
                             <Link to="/Sobre">
                                 <span className="item">questoes</span>
                             </Link>
                             <a href="">
                                 <span className="item">concursos</span>
-                            </a>
+                            </a>mmm
 
                             <a href="">
                                 <span className="item">guias</span>
@@ -51,35 +53,40 @@ function Navbar() {
                                 <span className="item">bancas</span>
                             </a>
                         </div>
+                        */}
                         <div id="right">
-                            <IconButton onClick={toggleDrawer(true)}>{useri()}</IconButton>
-                            {/* <Link to="/user">
-                            </Link> */}
+                            <IconButton onClick={toggleDrawer(true)}>{useri(true)}</IconButton>
+
+                            {/* 
                             <IconButton fontSize="large" id="hamburguer_menu">
                                 <MenuIcon fontSize="large" />
                             </IconButton>
+                            */}
                         </div>
                     </div>
                 </div>
                 <Drawer open={open} onClose={toggleDrawer(false)} anchor="right" ModalProps={{ keepMounted: true }}>
-                    <List>
-                        <img src={user.photoURL || "https://tinyurl.com/5kub7nce"} id="pfp" />
-                        <ListItem>
-                            <ListItemText>sarrada no ar</ListItemText>
+                    <List onClick={toggleDrawer(false)}>
+                        <ListItem id="pfpsec">
+                                <Link to="/user">{useri(false)}</Link>
                         </ListItem>
-                        <ListItem>
-                            <ListItemText>sarrada no ar</ListItemText>
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText>sarrada no ar</ListItemText>
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText>sarrada no ar</ListItemText>
-                        </ListItem>
+                        {[["questoes"], "concursos", "guias", "oragos", "bancas"].map((text, index) => (
+                            <ListItem key={index} disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        <FormatListBulletedIcon />
+                                    </ListItemIcon>
+                                    <Link to={`/${text}`}>
+                                        <span className="item">{text}</span>
+                                    </Link>
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
                     </List>
                 </Drawer>
 
-                {/* isso aqui era um menu
+                {/* 
+                isso aqui era um menu
                 <div id="menu-container">
                     <div id="menu">
                         <Link to="/">

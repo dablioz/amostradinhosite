@@ -32,7 +32,7 @@ const ExpandMore = styled((props) => {
     ],
 }));
 
-export default function Concurso(props) {
+export function Concurso(props) {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -71,7 +71,61 @@ export default function Concurso(props) {
                     </ExpandMore>
                 </div>
             </div>
-            
+
+            <Collapse id="coll" in={expanded} timeout="auto" unmountOnExit>
+                <div id="teste">
+                    <Documento title={"caralho"} />
+                    <Documento title={"caralho"} />
+                    <Documento title={"caralho"} />
+                    <Documento title={"caralho"} />
+                </div>
+            </Collapse>
+        </div>
+    );
+}
+
+export function EditConcurso() {
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    return (
+        <div className="cont">
+            <div id="Concurso-cont">
+                <img id="image" /* src={props.image} */ alt="" />
+                <div id="content">
+                    <h2>
+                        <input type="text" />
+                    </h2>
+                    <div id="Concurso">
+                        <div id="left">
+                            <p>
+                                {"Edital: "} <a> <input type="text" />{/* {props.edital} */}</a>
+                            </p>
+                            <p>
+                                {"Banca: "} <a href=""> <input type="text" />{/* {props.banca} */}</a>
+                            </p>
+                        </div>
+                        <div id="right">
+                            <p>
+                                {"Inscrições até: "} <a href=""> <input type="text" />{/* {props.fiminsc} */}</a>
+                            </p>
+                            <p>
+                                {"Regiao: "} <a href=""> <input type="text" />{/* {props.regiao} */}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="end">
+                    <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                </div>
+            </div>
+
             <Collapse id="coll" in={expanded} timeout="auto" unmountOnExit>
                 <div id="teste">
                     <Documento title={"caralho"} />

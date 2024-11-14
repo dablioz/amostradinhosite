@@ -57,6 +57,10 @@ header {
     object-fit: cover;
 }
 
+#pfpsec{
+    justify-content: center;
+}
+
 @media (max-width: 860px) {
     #logo {
         content: url("../../assets/logo_square.png");
@@ -68,7 +72,7 @@ header {
         display: none;
     }
 }
-
+/* 
 #hamburguer_menu {
     margin-left: 10px;
     display: none;
@@ -80,7 +84,7 @@ header {
         display: flex;
         visibility: visible;
     }
-}
+} */
 /*teeeeeeeeeeeeeste*/
 /* 
 .hamburger-menu {

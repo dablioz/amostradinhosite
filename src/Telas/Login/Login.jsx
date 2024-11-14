@@ -19,15 +19,10 @@ function Login() {
         }, 100);
     }
 
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
 
     const handleActive = () => {
-        setActive(true);
-        console.log(active);
-    };
-    const handleOff = () => {
-        setActive(false);
-        console.log(active);
+        active?setActive(false):setActive(true)
     };
 
     return (
@@ -95,7 +90,7 @@ function Login() {
                         <div className="toggle-panel toggle-left">
                             <h1>Seja Bem-vindo !</h1>
                             <p>Insira seus dados para utilizar todas as funcionalidades do site</p>
-                            <button className="hidden" id="login" onClick={() => handleOff()}>
+                            <button className="hidden" id="login" onClick={() => handleActive()}>
                                 Entrar
                             </button>
                         </div>
