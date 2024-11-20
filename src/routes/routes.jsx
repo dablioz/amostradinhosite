@@ -1,14 +1,18 @@
 /* import { Analytics } from "@vercel/analytics/react"; */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Sobre from "../Telas/Sobre/Sobre.jsx";
+import Footer from "../Components/Footer/Footer.jsx";
+import Navbar from "../Components/Navbar/Navbar.jsx";
+import QuestionPage from "../Components/Questionpage/Questionpage.jsx";
 import Cursos from "../Telas/Cursos/Cursos.jsx";
 import Home from "../Telas/Home/Home.jsx";
-import Navbar from "../Components/Navbar/Navbar.jsx";
-import Footer from "../Components/Footer/Footer.jsx";
 import Login from "../Telas/Login/Login.jsx";
-import User from "../Telas/User/User.jsx"
-import { PrivateRoutes, AuthRoute } from "./index.jsx";
+import Sobre from "../Telas/Sobre/Sobre.jsx";
 import EditUser from "../Telas/User/EditUser.jsx";
+import User from "../Telas/User/User.jsx";
+import { AuthRoute, PrivateRoutes } from "./index.jsx";
+ 
+  
+
 export const Router = () => {
     return (
         <BrowserRouter>
@@ -17,7 +21,7 @@ export const Router = () => {
                 <Route path="/" element={<Home />} />
 
 
-                <Route path="/questoes" />
+                <Route path="/questoes" element= {<QuestionPage />} /> 
                 <Route path="/concursos" element={<Cursos />} />
                 <Route path="/guias" />
                 <Route path="/orgaos" />
@@ -35,6 +39,7 @@ export const Router = () => {
                 </Route>
 
                 <Route path="/login" element={<Login />} />
+            
 
 
             </Routes>
