@@ -32,7 +32,8 @@ function Navbar() {
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
                         </Link>
-                        {/*                         
+
+                        {/* {
                         <div>
                             <Link to="/Sobre">
                                 <span className="item">questoes</span>
@@ -53,15 +54,10 @@ function Navbar() {
                                 <span className="item">bancas</span>
                             </a>
                         </div>
-                        */}
+                        } */}
+
                         <div id="right">
                             <IconButton onClick={toggleDrawer(true)}>{useri(true)}</IconButton>
-
-                            {/* 
-                            <IconButton fontSize="large" id="hamburguer_menu">
-                                <MenuIcon fontSize="large" />
-                            </IconButton>
-                            */}
                         </div>
                     </div>
                 </div>
@@ -70,7 +66,7 @@ function Navbar() {
                         <ListItem id="pfpsec">
                                 <Link to="/user">{useri(false)}</Link>
                         </ListItem>
-                        {[["questoes"], "concursos", "guias", "oragos", "bancas"].map((text, index) => (
+                        {["questoes", "concursos", "guias", "oragos", "bancas"].map((text, index) => (
                             <ListItem key={index} disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
@@ -84,34 +80,6 @@ function Navbar() {
                         ))}
                     </List>
                 </Drawer>
-
-                {/* 
-                isso aqui era um menu
-                <div id="menu-container">
-                    <div id="menu">
-                        <Link to="/">
-                            <Button size="large" className="item">
-                                <span id="hometxt">Home</span>
-                                <HomeIcon id="home" />
-                            </Button>
-                        </Link>
-
-                        <Link to="/cursos">
-                            <Button size="large" className="item">
-                                <span id="cursostxt">Concursos</span>
-                                <CollectionsBookmarkIcon id="cursos" />
-                            </Button>
-                        </Link>
-
-                        <Link to="/sobre">
-                            <Button size="large" className="item">
-                                <span id="sobretxt">Sobre</span>
-                                <InfoIcon id="sobre" />
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-                */}
             </header>
         </>
     );

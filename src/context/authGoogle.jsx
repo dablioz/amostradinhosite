@@ -1,21 +1,29 @@
-import { toast } from "react-toastify";
 import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
+import {
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    getAuth,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    updateProfile,
+} from "firebase/auth";
 import "firebase/firestore";
-import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
 
-import { getFirestore, doc, deleteDoc, getDoc, getDocs, setDoc, collection } from "firebase/firestore";
+import { collection, doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
+import "react-toastify/dist/ReactToastify.css";
 import { app } from "../service/firebaseconfig.jsx";
 
 const provider = new GoogleAuthProvider();
 
 export const AuthGoogleProvider = ({ children }) => {
-    console.log(app)
+    console.log(app);
     const db = getFirestore(app);
     const auth = getAuth(app);
     const storage = getStorage(app);
@@ -79,6 +87,8 @@ export const AuthGoogleProvider = ({ children }) => {
                 checkUser(u);
 
                 console.log(u);
+
+                toast.success("Conta criada com sucesso");
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -99,9 +109,8 @@ export const AuthGoogleProvider = ({ children }) => {
                 setUser(u);
                 localStorage.setItem("@AuthFirebase:user", JSON.stringify(u));
                 localStorage.setItem("@AuthFirebase:token", token);
-
+ 
                 console.log(u);
-
                 checkUser(u);
             })
             .catch((error) => {
@@ -114,51 +123,47 @@ export const AuthGoogleProvider = ({ children }) => {
     function signOut() {
         document.cookie = `city=;Secure`;
         localStorage.clear();
-        setUser(null);
 
+        toast.error("Voce foi desconectado")
+
+        setUser(null);
         return <Navigate to="/" />;
     }
 
-    
-const xgUser = async (nome) => {
-
+    const xgUser = async (nome) => {
         await updateProfile(auth.currentUser, {
-            displayName: nome
-        })
+            displayName: nome,
+        });
 
-
-        setUser(auth.currentUser)
+        setUser(auth.currentUser);
         localStorage.setItem("@AuthFirebase:user", JSON.stringify(auth.currentUser));
-        checkUser(auth.currentUser)
+        checkUser(auth.currentUser);
 
-        console.log('Success')
-        toast.success('Nome de usuário alterado')
-    }
+        console.log("Success");
+        toast.success("Nome de usuário alterado");
+    };
 
     const xgPfp = async (file) => {
+        await uploadBytes(ref(storage, "users_pfp/" + user.uid), file).then((snapshot) => {
+            console.log("Success");
+        });
 
-        await uploadBytes(ref(storage, 'users_pfp/' + user.uid), file)
-            .then((snapshot) => {
-                console.log("Success")
-            })
-
-        await getDownloadURL(ref(storage, 'users_pfp/' + user.uid))
+        await getDownloadURL(ref(storage, "users_pfp/" + user.uid))
             .then(async (url) => {
                 await updateProfile(auth.currentUser, {
-                    photoURL: url
-                })
-                console.log('Success')
-                toast.success('Foto de perfil alterada')
+                    photoURL: url,
+                });
+                console.log("Success");
+                toast.success("Foto de perfil alterada");
             })
             .catch((error) => {
-                console.log(error)
+                console.log(error);
                 // Handle any errors
             });
 
-
-        setUser(auth.currentUser)
+        setUser(auth.currentUser);
         localStorage.setItem("@AuthFirebase:user", JSON.stringify(auth.currentUser));
-    }
+    };
     return (
         <AuthGoogleContext.Provider
             value={{
@@ -172,6 +177,7 @@ const xgUser = async (nome) => {
                 signOut,
             }}>
             {children}
+            <ToastContainer autoClose={1500} theme="colored" newestOnTop={true} position="bottom-right" />
         </AuthGoogleContext.Provider>
     );
 };

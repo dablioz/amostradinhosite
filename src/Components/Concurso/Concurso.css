@@ -1,40 +1,80 @@
-#Concurso-cont{
-    display: flex; 
+#Concurso-cont {
     align-items: center;
-    border-radius: 15px; 
-    background-color: rgb(135, 135, 135);
-    & #image{
-        height: 74px;
-        border-radius: 015px;
-        margin: 0 6px;
-    }
-    & #content{
-        width: 100%;
-    } 
-    & #end{  
-        margin: 0 10px; 
-    }
+    border-radius: 15px;
+    color: white;
+    background-color: #53555d;
 }
 
-#Concurso{ 
+#Concurso {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-radius: 15px; 
 
-    & #left, & #right{
-        display: flex;
-        flex-direction: column;
+    & > label {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.205);
+        border-radius: 15px;
+        min-width: 74px;
+        height: 74px;
+        margin-right: 6px;
+    }
+
+    & #image {
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 74px;
+        max-width: 74px;
+        margin-right: 6px;
+
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    & #content {
+        width: 100%;
+    }
+    & #end {
+        margin: 0 2px 0 8px;
     }
 }
 
-#coll{
-    background-color: rgb(135, 135, 135);
-    border-radius: 0 0 15px 15px;
+#infos {
+    display: flex;
+    flex-direction: column;
+
+    & > .aoi {
+        display: flex;  
+        justify-content: space-between;
+    }
+
+    & > .aoi > .aoi {
+        display: flex;
+        flex-direction: column; 
+        /* flex-direction: column; */
+    }
+ 
 }
 
-#coll #teste{
+#coll #teste {
     display: flex;
     flex-direction: column;
     place-items: center;
+}
+
+#addfiles{
+    display: flex;
+    width: 100%; 
+    justify-content: end;
+
+    & .MuiIconButton-root{
+        height: fit-content;
+    }
+}
+
+#balala{
+    justify-content: space-between;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
 }
 
 /* .MuiCollapse-wrapperInner{

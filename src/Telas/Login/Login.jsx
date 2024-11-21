@@ -11,18 +11,17 @@ function Login() {
     const [password, setPassword] = useState([]);
 
     async function login() {
-        console.log(user, email, password);
-        await createAccount(user, email, password);
+        signInAccount(email, password);
+    }
 
-        setTimeout(() => {
-            signInAccount(email, password);
-        }, 100);
+    async function register() {
+        await createAccount(user, email, password);
     }
 
     const [active, setActive] = useState(true);
 
     const handleActive = () => {
-        active?setActive(false):setActive(true)
+        active ? setActive(false) : setActive(true);
     };
 
     return (
@@ -47,13 +46,37 @@ function Login() {
                         </div>
                         <span>ou use seu e-mail para registro</span>
 
-                        <input type="text" value={user} onChange={(e) => setUser(e.target.value)} name="nome" id="userField" placeholder="Nome" required />
+                        <input
+                            type="text"
+                            value={user}
+                            onChange={(e) => setUser(e.target.value)}
+                            name="nome"
+                            id="userField"
+                            placeholder="Nome"
+                            required
+                        />
 
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="emailField" placeholder="E-mail" required />
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            name="email"
+                            id="emailField"
+                            placeholder="E-mail"
+                            required
+                        />
 
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="senha" id="passwordField" placeholder="Senha" required />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            name="senha"
+                            id="passwordField"
+                            placeholder="Senha"
+                            required
+                        />
 
-                        <button /* type="submit" */ onClick={login}>Registrar</button>
+                        <button /* type="submit" */ onClick={register}>Registrar</button>
                     </div>
                 </div>
 
@@ -76,9 +99,25 @@ function Login() {
                         </div>
                         <span>ou use seu e-mail e senha</span>
 
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} id="emailField" name="email" placeholder="E-mail" required />
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            id="emailField"
+                            name="email"
+                            placeholder="E-mail"
+                            required
+                        />
 
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="passwordField" name="senha" placeholder="Senha" required />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            id="passwordField"
+                            name="senha"
+                            placeholder="Senha"
+                            required
+                        />
                         <a href="#">Esqueceu sua senha?</a>
 
                         <button /* type="submit" */ onClick={login}>Entrar</button>
