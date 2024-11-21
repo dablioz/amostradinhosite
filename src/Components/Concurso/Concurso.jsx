@@ -8,7 +8,7 @@ import Modal from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
 import { collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import * as React from "react";
-import { app } from "../../service/firebaseConfig.jsx";
+import { app } from "../../service/firebaseconfig.jsx";
 import Documento from "./Documento/Documento.jsx";
 
 
