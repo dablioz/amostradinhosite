@@ -1,5 +1,5 @@
 import React from "react";
-import "./QuestionPage.css"; // Arquivo CSS para estilização
+import "./Questionpage.css"; // Arquivo CSS para estilização
 
 const QuestionPage = () => {
   return (
