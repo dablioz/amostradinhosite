@@ -1,18 +1,20 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+{/*import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import "swiper/css/free-mode";
+import "swiper/css/free-mode";*/}
+import { Concurso, EditConcurso } from "../../Components/Concurso/Concurso";
+import LoadConcursos from "./../../Components/Concurso/LoadConcurso";
 
-import Curso from "../../Components/Curso/Curso";
+{/*import Curso from "../../Components/Curso/Curso";
 import caixa from "../../assets/caixa.jpg";
 import mpam from "../../assets/MPAM.jpg"
-import cmm from "../../assets/CMM.jpeg"
+import cmm from "../../assets/CMM.jpeg"*/}
 
 import "./Cursos.css";
 
 function Cursos() {
-    const i = [
+    {/*const i = [
         { text: "caixa 2024", image: caixa, link: "https://caixa.cesgranrio.org.br/home" },
         { text: "MPAM", image: mpam, link: "https://www.mpam.mp.br/"},
         { text: "CMM", image: cmm, link: "https://www.cmm.am.gov.br/"},
@@ -25,12 +27,32 @@ function Cursos() {
             </SwiperSlide>
         );
     });
-
+*/}
     return (
         <div id="cursos">
             <h2>Concursos</h2>
+            <LoadConcursos />
 
-            <Swiper
+            {/* <Concurso
+                items={{
+                    image: "https://tinyurl.com/ubyd83bp",
+                    title: "xalalá",
+                    edital: "28 / 02 / 24",
+                    banca: "Instituto Quadrix",
+                    fiminsc: "08/04/2024",
+                    regiao: "Estadual",
+                    files: ["aiaiai", "uiuiui"],
+                }}
+            /> */}
+
+            <div id="buttons">
+                <Button variant="contained" onClick={handleOpen}>
+                    Adicionar
+                </Button>
+            </div>
+
+            <EditConcurso open={open} handleOpen={handleOpen} style={style} />
+            {/*<Swiper
                 className="myswyper"
                 slidesPerView={"auto"}
                 spaceBetween={10}
@@ -47,7 +69,7 @@ function Cursos() {
                     1200: {
                         slidesPerView: 5,
                     },
-                }} */
+                }} *}
                 scrollbar={{
                     draggable: true
                 }}
@@ -55,7 +77,7 @@ function Cursos() {
                 modules={[FreeMode, Scrollbar]}
             >
                 {x}
-            </Swiper>
+            </Swiper>*/}
         </div>
     );
 }
