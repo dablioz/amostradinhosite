@@ -5,7 +5,7 @@ import "swiper/css/scrollbar";
 import "swiper/css/free-mode";*/}
 import { Concurso, EditConcurso } from "../../Components/Concurso/Concurso";
 import LoadConcursos from "../../Components/Concurso/LoadConcurso";
-import {Button} from "@mui/material
+import {Button} from "@mui/material"
 {/*import Curso from "../../Components/Curso/Curso";
 import caixa from "../../assets/caixa.jpg";
 import mpam from "../../assets/MPAM.jpg"
