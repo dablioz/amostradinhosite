@@ -1,5 +1,4 @@
-import "./Concurso.css"
-
+import "./Concurso.css";
 import AddIcon from "@mui/icons-material/Add"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import { Button, Collapse, IconButton, TextField } from "@mui/material"
@@ -8,7 +7,7 @@ import Modal from "@mui/material/Modal"
 import { styled } from "@mui/material/styles"
 import { collection, doc, FirestoreError, getFirestore, setDoc } from "firebase/firestore"
 import * as React from "react"
-import { app } from "../../service/firebaseConfig.jsx"
+import { app } from "../../service/firebaseconfig.jsx"
 import Documento from "./Documento/Documento.jsx"
 import { toast } from "react-toastify"
 import RemoveIcon from "@mui/icons-material/Remove"

@@ -1,7 +1,7 @@
 import { PureComponent } from "react";
 import { Concurso } from "./Concurso";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
-import { app } from "../../service/firebaseConfig.jsx";
+import { app } from "../../service/firebaseconfig.jsx";
 
 const db = getFirestore(app);
 const concursosRef = collection(db, "concursos");
