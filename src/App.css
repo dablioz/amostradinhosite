@@ -1,6 +1,6 @@
 #App {
     position: relative; 
-    min-height: 100vh; /*def: 120px*/
+    min-height: 100dvh; /*def: 120px*/
     padding: 80px 0 109px 0; /* +40px top pro menu, default: 80px*/
     /* min-height: calc(100vh - 160px); */
 }
