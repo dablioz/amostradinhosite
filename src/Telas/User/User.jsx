@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Concurso, EditConcurso } from "../../Components/Concurso/Concurso";
 import { AuthGoogleContext } from "../../context/authGoogle";
 
+import neymar from "../../assets/982239d877ee1a0c116cc03db7ac3eb7.jpg"
+
 import "./User.css";
 import LoadConcursos from "./../../Components/Concurso/LoadConcurso";
 
@@ -37,7 +39,7 @@ function User() {
     return (
         <div id="userCont">
             <div id="usercard">
-                <img id="userbg" src="https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827" />
+                <img id="userbg" src={neymar}{/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827" />*/}
 
                 <div id="user-data">
                     <h2>{username}</h2>
