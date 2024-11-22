@@ -39,8 +39,8 @@ function User() {
     return (
         <div id="userCont">
             <div id="usercard">
-                <img id="userbg" src={neymar}{/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827" />*/}
-
+                <img id="userbg" src={neymar} />
+{/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827"*/}
                 <div id="user-data">
                     <h2>{username}</h2>
                     <Link to="/user/edit" id="linkUserImg">
@@ -49,28 +49,7 @@ function User() {
                 </div>
             </div>
 
-            <LoadConcursos />
-
-            {/* <Concurso
-                items={{
-                    image: "https://tinyurl.com/ubyd83bp",
-                    title: "xalalá",
-                    edital: "28 / 02 / 24",
-                    banca: "Instituto Quadrix",
-                    fiminsc: "08/04/2024",
-                    regiao: "Estadual",
-                    files: ["aiaiai", "uiuiui"],
-                }}
-            /> */}
-
-            <div id="buttons">
-                <Button variant="contained" onClick={handleOpen}>
-                    Adicionar
-                </Button>
-            </div>
-
-            <EditConcurso open={open} handleOpen={handleOpen} style={style} />
-
+            
             <div id="buttons">
                 <Link to="/">
                     <Button id="sair" onClick={signOut} variant="outlined" color="error">
