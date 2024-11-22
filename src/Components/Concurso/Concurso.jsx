@@ -131,7 +131,7 @@ export function EditConcurso(props) {
     function remove(index) {
         let arr = desisto
         arr.splice(index, 1)
-        setDesisto(arr)
+        setDesisto([...arr])
     }
 
     const addConc = async () => {
