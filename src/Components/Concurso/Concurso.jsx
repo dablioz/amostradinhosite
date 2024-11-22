@@ -60,7 +60,7 @@ export function Concurso(props) {
                     <div id="infos">
                         <div className="aoi">
                             <div className="nomegrande" href={props.items.edital} target="_blank">
-                                {"Edital: " + filename + " asdklmasdklmaklsdmklmalskasdasdasdasdasdasdasdasdasd"}
+                                {"Edital: " + filename}
                             </div>
                         </div>
 
