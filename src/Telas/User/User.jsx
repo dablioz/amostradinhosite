@@ -26,7 +26,7 @@ function User() {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: "90%",
+        width: "95%",
         maxWidth: "800px",
         bgcolor: "background.paper",
         border: "2px solid #000",
@@ -49,17 +49,17 @@ function User() {
 
             <LoadConcursos />
 
-            <Concurso
+            {/* <Concurso
                 items={{
                     image: "https://tinyurl.com/ubyd83bp",
-                    titulo: "xalalá",
+                    title: "xalalá",
                     edital: "28 / 02 / 24",
                     banca: "Instituto Quadrix",
                     fiminsc: "08/04/2024",
                     regiao: "Estadual",
                     files: ["aiaiai", "uiuiui"],
                 }}
-            />
+            /> */}
 
             <div id="buttons">
                 <Button variant="contained" onClick={handleOpen}>

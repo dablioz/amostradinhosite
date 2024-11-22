@@ -1,9 +1,6 @@
-#Documento-cont { 
-     
-    width: 80%;
-
-    & a {
-        line-height: 2;
+#Documento-cont {
+    width: calc(90vw - 32px - 40px);
+    & > div { 
         display: flex;
         width: 100%;
         justify-content: space-between;

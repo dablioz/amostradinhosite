@@ -1,23 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
-    /* color-scheme: light dark; */ 
-    background-color: #ECEBFE;
+    /* color-scheme: light dark; */
+    background-color: #ecebfe;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-     
-    font-family: 'Montserrat', sans-serif; 
+    font-family: "Montserrat", sans-serif;
 
-    --height: calc(100vh - 80px - 109px - 30px)
+    --height: calc(100vh - 80px - 109px - 30px);
+}
+
+/* h2{
+    width: fit-content;
+} */
+
+.nomegrande {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pqp{
+    display: flex;
+
+    & > div {
+        width: 100%;
+    }
 }
 
 /* body {

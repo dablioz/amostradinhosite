@@ -11,7 +11,7 @@ class LoadConcursos extends PureComponent {
         super(props);
 
         this.state = {
-            concursos: [],
+            files: [],
         };
 
         this.vai = this.vai.bind(this);

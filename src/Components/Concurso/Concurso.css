@@ -8,8 +8,8 @@
 #Concurso {
     display: flex;
     align-items: center;
-    padding: 8px;
-    border-radius: 15px; 
+    padding: 8px 0px 8px 8px;
+    border-radius: 15px;
 
     & > label {
         cursor: pointer;
@@ -30,47 +30,51 @@
         border-radius: 15px;
     }
     & #content {
-        width: 100%;
-    }
-    & #end {
-        margin: 0 2px 0 8px;
-    }
+        width: calc(95vw - 8px - 80px - 40px);
+    } 
 }
 
 #infos {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 
     & > .aoi {
-        display: flex;  
-        justify-content: space-between;
+        max-width: 300px;
+        flex: 1 1 50%;
+        min-width: 0;
     }
 
-    & > .aoi > .aoi {
-        display: flex;
-        flex-direction: column; 
-        /* flex-direction: column; */
+    & > .aoi:last-child {
+        flex: unset;
+        width: max-content;
+        min-width: 0;
     }
- 
 }
 
-#coll #teste {
+@media (max-width: 600px) {
+    #infos {
+        flex-direction: column;
+    }
+}
+
+#coll #teste { 
+    width: 95%;
     display: flex;
     flex-direction: column;
-    place-items: center;
+    place-self: center;
 }
 
-#addfiles{
+#addfiles {
     display: flex;
-    width: 100%; 
+    width: 100%;
     justify-content: end;
 
-    & .MuiIconButton-root{
+    & .MuiIconButton-root {
         height: fit-content;
     }
 }
 
-#balala{
+#balala {
     justify-content: space-between;
     display: flex;
     margin: 0 auto;
