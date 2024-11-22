@@ -123,9 +123,11 @@ export function EditConcurso(props) {
     }
 
     function sabedeus() {
-        let url = document.getElementById("editlink").value
-
-        if (url.value != "") setDesisto([...desisto, url])
+        let url = document.getElementById("editlink")
+    
+        if (url.value != "") setDesisto([...desisto, url.value])
+        url.focus()
+        url.value = ""
     }
 
     function remove(index) {
