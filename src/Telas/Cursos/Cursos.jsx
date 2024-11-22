@@ -3,6 +3,7 @@ import { Scrollbar, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/free-mode";*/}
+import * from "react"
 import { Concurso, EditConcurso } from "../../Components/Concurso/Concurso";
 import LoadConcursos from "../../Components/Concurso/LoadConcurso";
 import {Button} from "@mui/material"
