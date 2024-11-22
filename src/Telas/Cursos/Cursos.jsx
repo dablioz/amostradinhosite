@@ -28,6 +28,25 @@ function Cursos() {
         );
     });
 */}
+
+const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+        open ? setOpen(false) : setOpen(true);
+    };
+
+    const style = {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "95%",
+        maxWidth: "800px",
+        bgcolor: "background.paper",
+        border: "2px solid #000",
+        boxShadow: 24,
+        p: 2,
+    };
+    
     return (
         <div id="cursos">
             <h2>Concursos</h2>
