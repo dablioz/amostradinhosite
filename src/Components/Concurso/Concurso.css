@@ -51,6 +51,11 @@
     }
 }
 
+#Editinfos{
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 600px) {
     #infos {
         flex-direction: column;

@@ -1,7 +1,7 @@
 #Documento-cont {
     margin: 0 auto;
     width: calc(90vw - 32px - 40px);
-    & > div { 
+    & > a { 
         display: flex;
         width: 100%;
         justify-content: space-between;

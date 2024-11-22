@@ -1,14 +1,15 @@
-import { Button } from "@mui/material";
+import { Button, Modal } from "@mui/material";
 import * as React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Concurso, EditConcurso } from "../../Components/Concurso/Concurso";
 import { AuthGoogleContext } from "../../context/authGoogle";
 
-import neymar from "../../assets/982239d877ee1a0c116cc03db7ac3eb7.jpg"
+import neymar from "../../assets/982239d877ee1a0c116cc03db7ac3eb7.jpg";
 
+import Box from "@mui/material/Box";
+import EditUser from "./EditUser";
 import "./User.css";
-import LoadConcursos from "./../../Components/Concurso/LoadConcurso";
+
 
 function User() {
     // const Fuse = require('fuse.js')
@@ -28,28 +29,26 @@ function User() {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: "95%",
-        maxWidth: "800px",
+        minWidth: "300px",
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
-        p: 2,
+        p: 4,
     };
 
     return (
         <div id="userCont">
             <div id="usercard">
                 <img id="userbg" src={neymar} />
-{/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827"*/}
+                {/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827"*/}
                 <div id="user-data">
                     <h2>{username}</h2>
-                    <Link to="/user/edit" id="linkUserImg">
-                        <img src={userImage} id="pfp" />
+                    <Link /* to="/user/edit" */ id="linkUserImg">
+                        <img src={userImage} id="pfp" onClick={handleOpen} />
                     </Link>
                 </div>
             </div>
 
-            
             <div id="buttons">
                 <Link to="/">
                     <Button id="sair" onClick={signOut} variant="outlined" color="error">
@@ -57,6 +56,12 @@ function User() {
                     </Button>
                 </Link>
             </div>
+
+            <Modal disablePortal disableEnforceFocus disableAutoFocus open={open} onClose={handleOpen}>
+                <Box sx={style}>
+                    <EditUser />
+                </Box>
+            </Modal>
         </div>
     );
 }

@@ -1,19 +1,19 @@
 import "./Concurso.css";
-import AddIcon from "@mui/icons-material/Add"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import { Button, Collapse, IconButton, TextField } from "@mui/material"
-import Box from "@mui/material/Box"
-import Modal from "@mui/material/Modal"
-import { styled } from "@mui/material/styles"
-import { collection, doc, FirestoreError, getFirestore, setDoc } from "firebase/firestore"
-import * as React from "react"
-import { app } from "../../service/firebaseconfig.jsx"
-import Documento from "./Documento/Documento.jsx"
-import { toast } from "react-toastify"
-import RemoveIcon from "@mui/icons-material/Remove"
+import AddIcon from "@mui/icons-material/Add";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Button, Collapse, IconButton, TextField } from "@mui/material";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { styled } from "@mui/material/styles";
+import { collection, doc, FirestoreError, getFirestore, setDoc } from "firebase/firestore";
+import * as React from "react";
+import { app } from "../../service/firebaseconfig.jsx";
+import Documento from "./Documento/Documento.jsx";
+import { toast } from "react-toastify";
+import RemoveIcon from "@mui/icons-material/Remove";
 const ExpandMore = styled((props) => {
-    const { expand, ...other } = props
-    return <IconButton {...other} />
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
 })(({ theme }) => ({
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
@@ -33,23 +33,23 @@ const ExpandMore = styled((props) => {
             },
         },
     ],
-}))
+}));
 
-const db = getFirestore(app)
-const concursosRef = collection(db, "concursos")
+const db = getFirestore(app);
+const concursosRef = collection(db, "concursos");
 
 export function Concurso(props) {
-    const [expanded, setExpanded] = React.useState(false)
+    const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
-        setExpanded(!expanded)
-    }
+        setExpanded(!expanded);
+    };
 
     const loadfiles = props.items.files.map((files, i) => {
-        return <Documento key={i} link={files} />
-    })
+        return <Documento key={i} link={files} />;
+    });
 
-    let filename = props.items.edital.split("/").pop()
+    let filename = props.items.edital.split("/").pop();
 
     return (
         <div id="Concurso-cont" className="cont">
@@ -71,11 +71,7 @@ export function Concurso(props) {
                 </div>
 
                 <div id="end">
-                    <ExpandMore
-                        expand={expanded}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="show more">
+                    <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                         <ExpandMoreIcon />
                     </ExpandMore>
                 </div>
@@ -90,13 +86,13 @@ export function Concurso(props) {
                 </div>
             </Collapse>
         </div>
-    )
+    );
 }
 
 export function EditConcurso(props) {
-    const [expanded, setExpanded] = React.useState(false)
-    const [alala, setAlala] = React.useState("")
-    const [desisto, setDesisto] = React.useState([])
+    const [expanded, setExpanded] = React.useState(false);
+    const [alala, setAlala] = React.useState("");
+    const [desisto, setDesisto] = React.useState([]);
 
     /* React.useEffect(() => {
         desisto.map((link, i) => (
@@ -110,40 +106,40 @@ export function EditConcurso(props) {
     }, [desisto]) */
 
     const handleExpandClick = () => {
-        setExpanded(!expanded)
-    }
+        setExpanded(!expanded);
+    };
 
     const handleIMG = (e) => {
-        var reader = new FileReader()
-        reader.readAsDataURL(e.target.files[0])
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
 
         reader.onload = (e) => {
-            setAlala(e.target.result)
-        }
-    }
+            setAlala(e.target.result);
+        };
+    };
 
     function sabedeus() {
-        let url = document.getElementById("editlink")
-    
-        if (url.value != "") setDesisto([...desisto, url.value])
-        url.focus()
-        url.value = ""
+        let url = document.getElementById("editlink");
+
+        if (url.value != "") setDesisto([...desisto, url.value]);
+        url.focus();
+        url.value = "";
     }
 
     function remove(index) {
-        let arr = desisto
-        arr.splice(index, 1)
-        setDesisto([...arr])
+        let arr = desisto;
+        arr.splice(index, 1);
+        setDesisto([...arr]);
     }
 
     const addConc = async () => {
-        let edittitle = document.getElementById("edittitle").value
-        let editedital = document.getElementById("editedital").value
+        let edittitle = document.getElementById("edittitle").value;
+        let editedital = document.getElementById("editedital").value;
 
-        let editfiminsc = document.getElementById("editfiminsc").value
+        let editfiminsc = document.getElementById("editfiminsc").value;
 
-        let editregiao = document.getElementById("editregiao").value
-        let editbanca = document.getElementById("editbanca").value
+        let editregiao = document.getElementById("editregiao").value;
+        let editbanca = document.getElementById("editbanca").value;
 
         /* console.log(edittitle)
         console.log(editedital)
@@ -159,10 +155,10 @@ export function EditConcurso(props) {
             banca: editbanca,
             files: [...desisto],
             image: alala,
-        }).catch((error) => console.log(error))
+        }).catch((error) => console.log(error));
 
         /* toast.success("Concurso registrado!") */
-    }
+    };
 
     return (
         <Modal disablePortal disableEnforceFocus disableAutoFocus open={props.open} onClose={props.handleOpen}>
@@ -179,7 +175,7 @@ export function EditConcurso(props) {
                                 <h2>{"Título: "}</h2>
                                 <TextField id="edittitle" size="small" sx={{ maxWidth: "100%" }} />
                             </div>
-                            <div id="infos">
+                            <div id="Editinfos">
                                 <div className="pqp">
                                     <div>
                                         {"Edital: "}
@@ -190,25 +186,21 @@ export function EditConcurso(props) {
                                         <TextField id="editfiminsc" size="small" />
                                     </div>
                                 </div>
-                            </div>
-                            <div className="pqp">
-                                <div>
-                                    {"Banca: "}
-                                    <TextField id="editbanca" size="small" />
-                                </div>
-                                <div>
-                                    {"Regiao: "}
-                                    <TextField id="editregiao" size="small" />
+                                <div className="pqp">
+                                    <div>
+                                        {"Banca: "}
+                                        <TextField id="editbanca" size="small" />
+                                    </div>
+                                    <div>
+                                        {"Regiao: "}
+                                        <TextField id="editregiao" size="small" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div id="end">
-                            <ExpandMore
-                                expand={expanded}
-                                onClick={handleExpandClick}
-                                aria-expanded={expanded}
-                                aria-label="show more">
+                            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                                 <ExpandMoreIcon />
                             </ExpandMore>
                         </div>
@@ -225,8 +217,17 @@ export function EditConcurso(props) {
                                 </div>
                             ))}
                         </div>
+                        
                         <div id="addfiles">
-                            <TextField id="editlink" size="small" variant="standard" label="link" />
+                            <TextField
+                                id="editlink"
+                                size="small"
+                                variant="standard"
+                                label="link"
+                                onKeyDown={(e) => {
+                                    if (e.code == "Enter") sabedeus();
+                                }}
+                            />
                             <IconButton size="" onClick={() => sabedeus()}>
                                 <AddIcon />
                             </IconButton>
@@ -242,5 +243,5 @@ export function EditConcurso(props) {
                 </div>
             </Box>
         </Modal>
-    )
+    );
 }

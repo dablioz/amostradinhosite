@@ -7,10 +7,10 @@ export default function Documento(props) {
     
     return (
         <div id='Documento-cont'>
-            <div href={props.link} target='_blank'>
+            <a href={props.link} target='_blank'>
                 <p className='nomegrande'>{filename}</p>
                 <DescriptionIcon />
-            </div>
+            </a>
         </div>
     );
 }  
