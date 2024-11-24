@@ -37,10 +37,7 @@ export const Router = () => {
                     <Route path="/user" element={<User />} />
                     <Route path="/user/edit" element={<EditUser />} />
                 </Route>
-
-                <Route path="/login" element={<Login />} />
-            
-
+                
 
             </Routes>
             <Footer />

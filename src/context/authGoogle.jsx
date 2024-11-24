@@ -114,7 +114,8 @@ export const AuthGoogleProvider = ({ children }) => {
                 checkUser(u);
             })
             .catch((error) => {
-                //console.log(errorMessage)
+                console.log(error.code)
+                /* if (error.message) */
             });
 
         return <Navigate to="/" />;

@@ -1,28 +1,32 @@
-import "./Login.css";
-import { useState, useContext, useEffect } from "react";
+import "./Login.css"
+import { useState, useContext, useEffect } from "react"
 
-import { AuthGoogleContext } from "../../context/authGoogle";
+import { AuthGoogleContext } from "../../context/authGoogle"
 
 function Login() {
-    const { createAccount, signInAccount, signInGoogle } = useContext(AuthGoogleContext);
+    const { createAccount, signInAccount, signInGoogle } = useContext(AuthGoogleContext)
 
-    const [user, setUser] = useState([]);
-    const [email, setEmail] = useState([]);
-    const [password, setPassword] = useState([]);
+    const [user, setUser] = useState([])
+    const [email, setEmail] = useState([])
+    const [password, setPassword] = useState([])
+    const [active, setActive] = useState(false)
 
     async function login() {
-        signInAccount(email, password);
+        signInAccount(email, password)
     }
 
     async function register() {
-        await createAccount(user, email, password);
+        await createAccount(user, email, password)
     }
 
-    const [active, setActive] = useState(true);
-
     const handleActive = () => {
-        active ? setActive(false) : setActive(true);
-    };
+        active ? setActive(false) : setActive(true)
+        /* if(active){
+
+        } else {
+            emailField.focus()
+        } */
+    }
 
     return (
         <div id="LoginCont">
@@ -47,6 +51,7 @@ function Login() {
                         <span>ou use seu e-mail para registro</span>
 
                         <input
+                            autoFocus
                             type="text"
                             value={user}
                             onChange={(e) => setUser(e.target.value)}
@@ -70,13 +75,20 @@ function Login() {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.code == "Enter") {
+                                    register()
+                                }
+                            }}
                             name="senha"
                             id="passwordField"
                             placeholder="Senha"
                             required
                         />
 
-                        <button /* type="submit" */ onClick={register}>Registrar</button>
+                        <button className="laranja" /* type="submit" */ onClick={register}>
+                            Registrar
+                        </button>
                     </div>
                 </div>
 
@@ -100,6 +112,7 @@ function Login() {
                         <span>ou use seu e-mail e senha</span>
 
                         <input
+                            autoFocus
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -113,6 +126,11 @@ function Login() {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.code == "Enter") {
+                                    login()
+                                }
+                            }}
                             id="passwordField"
                             name="senha"
                             placeholder="Senha"
@@ -120,7 +138,9 @@ function Login() {
                         />
                         <a href="#">Esqueceu sua senha?</a>
 
-                        <button /* type="submit" */ onClick={login}>Entrar</button>
+                        <button className="laranja" /* type="submit" */ onClick={login}>
+                            Entrar
+                        </button>
                     </div>
                 </div>
 
@@ -144,6 +164,6 @@ function Login() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-export default Login;
+export default Login

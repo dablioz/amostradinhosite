@@ -22,6 +22,7 @@
 
     & #image {
         background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
         height: 74px;
         max-width: 74px;
         margin-right: 6px;
@@ -30,16 +31,21 @@
         border-radius: 15px;
     }
     & #content {
-        width: calc(95vw - 8px - 80px - 40px);
+        flex: 1 1 100%;
+        width: 50%;
+        /* width: calc(95vw - 8px - 80px - 40px); */
     } 
+    & #end {
+        max-width: 40px;
+        width: 100%;
+    }
 }
 
 #infos {
     display: flex;
     justify-content: space-between;
 
-    & > .aoi {
-        max-width: 300px;
+    & > .aoi { 
         flex: 1 1 50%;
         min-width: 0;
     }

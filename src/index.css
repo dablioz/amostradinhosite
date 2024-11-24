@@ -22,7 +22,16 @@
     width: fit-content;
 } */
 
-.nomegrande {
+.laranja {
+    transition: 300ms;
+
+    &:hover {
+        transition: 200ms;
+        box-shadow: 0 0 10px #ff7300;
+    }
+}
+
+.nomegrande { 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

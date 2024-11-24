@@ -10,5 +10,4 @@ export const PrivateRoutes = () => {
 export const AuthRoute = () => {
     const { signed } = useContext(AuthGoogleContext)
     return signed ? <Navigate to="/" /> : <Outlet />
-
 }

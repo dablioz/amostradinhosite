@@ -1,4 +1,27 @@
- 
+ #cursos{
+    & #pesquisa {
+        align-self: start;
+        display: flex;
+
+        & input {
+            margin-right: 10px;
+            padding: 8px;
+            border-radius: 30px;
+            background: linear-gradient(to right, #f39b5b, #bb6c3b);
+            outline: none;
+            border: none;
+        }
+    }
+
+    & #search {
+        background-color: #015077;
+        color: white;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+    }
+ }
 .swiper {
     border-radius: 25px;
 }
