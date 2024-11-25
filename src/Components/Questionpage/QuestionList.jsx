@@ -1,17 +1,18 @@
-import { Box, Button, Modal, TextField } from "@mui/material"
-import Radio from "@mui/material/Radio"
-import { addDoc, doc, setDoc } from "firebase/firestore"
-import * as React from "react"
-import { AuthGoogleContext } from "../../context/authGoogle"
-import "./QuestionList.css"
+import { Box, Button, Modal, TextField } from "@mui/material";
+import Radio from "@mui/material/Radio";
+import { addDoc } from "firebase/firestore";
+import * as React from "react";
+import { AuthGoogleContext } from "../../context/authGoogle";
+import "./QuestionList.css";
 
-import { collection, getDocs, getFirestore } from "firebase/firestore"
-import { app } from "../../service/firebaseconfig.jsx"
-import { Link } from "react-router-dom"
-const db = getFirestore(app)
-const questoesRef = collection(db, "questoes")
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { Link, useNavigate } from "react-router-dom";
+import { app } from "../../service/firebaseconfig.jsx";
+const db = getFirestore(app);
+const questoesRef = collection(db, "questoes");
 
 export function QuestionList() {
+    const navigate = useNavigate();
     const style = {
         position: "absolute",
         top: "50%",
@@ -23,43 +24,41 @@ export function QuestionList() {
         border: "2px solid #000",
         boxShadow: 24,
         p: 2,
-    }
+    };
 
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = React.useState(false);
     const handleOpen = () => {
-        open ? setOpen(false) : setOpen(true)
-    }
+        open ? setOpen(false) : setOpen(true);
+    };
 
     function teste() {
-        const { user } = React.useContext(AuthGoogleContext)
-        if (
-            user != null &&
-            (user.uid == "OcuKRfU9KkQG69JSbuBzp54XUmw1" ||
-                user.uid == "DcKltQnN29W4jMjAJMxwMOjCJ7i1" ||
-                user.uid == "L1sSI4bH5iMWHaMJ4xjs3bNRjzi1")
-        ) {
+        const { user } = React.useContext(AuthGoogleContext);
+        if (user != null && (user.uid == "OcuKRfU9KkQG69JSbuBzp54XUmw1" || user.uid == "DcKltQnN29W4jMjAJMxwMOjCJ7i1" || user.uid == "L1sSI4bH5iMWHaMJ4xjs3bNRjzi1")) {
             return (
                 <div id="buttons">
                     <Button variant="contained" onClick={handleOpen}>
                         Adicionar
                     </Button>
                 </div>
-            )
+            );
         }
     }
 
-    const [questoes, setQuestoes] = React.useState([])
+    const [questoes, setQuestoes] = React.useState([]);
+    const questoesArray = [];
     React.useEffect(() => {
         async function aimeu() {
-            const querySnapshot = await getDocs(questoesRef)
+            const querySnapshot = await getDocs(questoesRef);
 
             querySnapshot.forEach((doc) => {
                 // console.log(doc.data())
-                setQuestoes([...questoes, doc.data()])
-            })
+                questoesArray.push(doc.data());
+
+                setQuestoes([...questoesArray]);
+            });
         }
-        aimeu()
-    }, [])
+        aimeu();
+    }, []);
 
     const addQuest = async () => {
         await addDoc(questoesRef, {
@@ -73,16 +72,16 @@ export function QuestionList() {
             questao_d: dfield.value,
             answer: selectedValue,
             id: Math.floor(Math.random() * 200),
-        })
+        });
 
         /* toast.success("Concurso registrado!") */
-    }
+    };
 
-    const [selectedValue, setSelectedValue] = React.useState("a")
+    const [selectedValue, setSelectedValue] = React.useState("a");
 
     const handleChange = (event) => {
-        setSelectedValue(event.target.value)
-    }
+        setSelectedValue(event.target.value);
+    };
 
     return (
         <>
@@ -96,13 +95,16 @@ export function QuestionList() {
                 </thead>
                 <tbody>
                     {questoes.map((questao) => (
-                        <tr key={questao.id}>
+                        <tr
+                            key={questao.id}
+                            onClick={() => {
+                                navigate(`/questoes/${questao.id}`);
+                            }}
+                        >
                             {console.log(questao.id)}
-                            <Link to={`/questoes/${questao.id}`}>
-                                <td>{questao.concurso}</td>
-                                <td>{questao.materia}</td>
-                                <td>{questao.ano}</td>
-                            </Link>
+                            <td>{questao.concurso}</td>
+                            <td>{questao.materia}</td>
+                            <td>{questao.ano}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -125,47 +127,23 @@ export function QuestionList() {
                         <br />
                         <div>
                             <div className="alternatives">
-                                <Radio
-                                    checked={selectedValue === "a"}
-                                    onChange={handleChange}
-                                    value="a"
-                                    name="radio-buttons"
-                                    inputProps={{ "aria-label": "A" }}
-                                />
+                                <Radio checked={selectedValue === "a"} onChange={handleChange} value="a" name="radio-buttons" inputProps={{ "aria-label": "A" }} />
                                 <TextField id="afield" variant="filled" multiline label="questao a" />
                             </div>
 
                             <br />
                             <div className="alternatives">
-                                <Radio
-                                    checked={selectedValue === "b"}
-                                    onChange={handleChange}
-                                    value="b"
-                                    name="radio-buttons"
-                                    inputProps={{ "aria-label": "B" }}
-                                />
+                                <Radio checked={selectedValue === "b"} onChange={handleChange} value="b" name="radio-buttons" inputProps={{ "aria-label": "B" }} />
                                 <TextField id="bfield" variant="filled" multiline label="questao b" />
                             </div>
                             <br />
                             <div className="alternatives">
-                                <Radio
-                                    checked={selectedValue === "c"}
-                                    onChange={handleChange}
-                                    value="c"
-                                    name="radio-buttons"
-                                    inputProps={{ "aria-label": "C" }}
-                                />
+                                <Radio checked={selectedValue === "c"} onChange={handleChange} value="c" name="radio-buttons" inputProps={{ "aria-label": "C" }} />
                                 <TextField id="cfield" variant="filled" multiline label="questao c" />
                             </div>
                             <br />
                             <div className="alternatives">
-                                <Radio
-                                    checked={selectedValue === "d"}
-                                    onChange={handleChange}
-                                    value="d"
-                                    name="radio-buttons"
-                                    inputProps={{ "aria-label": "D" }}
-                                />
+                                <Radio checked={selectedValue === "d"} onChange={handleChange} value="d" name="radio-buttons" inputProps={{ "aria-label": "D" }} />
                                 <TextField id="dfield" variant="filled" multiline label="questao d" />
                             </div>
                         </div>
@@ -180,5 +158,5 @@ export function QuestionList() {
                 </Box>
             </Modal>
         </>
-    )
+    );
 }
