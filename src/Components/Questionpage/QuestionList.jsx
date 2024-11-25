@@ -88,6 +88,7 @@ export function QuestionList() {
             <table className="cont">
                 <thead>
                     <tr>
+                        <th>Numero</th>
                         <th>Concurso</th>
                         <th>Materia</th>
                         <th>Ano</th>
@@ -101,7 +102,7 @@ export function QuestionList() {
                                 navigate(`/questoes/${questao.id}`);
                             }}
                         >
-                            {console.log(questao.id)}
+                            <td>{questao.id}</td>
                             <td>{questao.concurso}</td>
                             <td>{questao.materia}</td>
                             <td>{questao.ano}</td>

@@ -10,19 +10,18 @@ const db = getFirestore(app);
 const questoesRef = collection(db, "questoes");
 
 const QuestionPage = () => {
-    const { id } = useParams();
     const [selectedValue, setSelectedValue] = useState("a");
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
     const [item, setItem] = useState("");
-    
+
+    const { id } = useParams();
+
     useEffect(() => {
-        console.log(id)
         async function initial() {
-            const q = query(collection(db, "questoes"), where("id", "==", id.get() ));;
-            const querySnapshot = await getDocs(q);
+            const querySnapshot = await getDocs(query(collection(db, "questoes"), where("id", "==", Number(id))));
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
@@ -61,22 +60,22 @@ const QuestionPage = () => {
                     <div className="options">
                         <div id="option-cont">
                             <Radio id="radioa" checked={selectedValue === "a"} onChange={handleChange} value="a" name="radio-buttons" inputProps={{ "aria-label": "A" }} />
-                            <label for="radioa"> {item.questao_a} </label>
+                            <label htmlFor="radioa"> {item.questao_a} </label>
                         </div>
 
                         <div>
                             <Radio id="radiob" checked={selectedValue === "b"} onChange={handleChange} value="b" name="radio-buttons" inputProps={{ "aria-label": "B" }} />
-                            <label for="radiob"> {item.questao_b} </label>
+                            <label htmlFor="radiob"> {item.questao_b} </label>
                         </div>
 
                         <div>
                             <Radio id="radioc" checked={selectedValue === "c"} onChange={handleChange} value="c" name="radio-buttons" inputProps={{ "aria-label": "C" }} />
-                            <label for="radioc"> {item.questao_c} </label>
+                            <label htmlFor="radioc"> {item.questao_c} </label>
                         </div>
 
                         <div>
                             <Radio id="radiod" checked={selectedValue === "d"} onChange={handleChange} value="d" name="radio-buttons" inputProps={{ "aria-label": "D" }} />
-                            <label for="radiod"> {item.questao_d} </label>
+                            <label htmlFor="radiod"> {item.questao_d} </label>
                         </div>
                     </div>
                     <button
