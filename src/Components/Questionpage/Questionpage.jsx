@@ -12,9 +12,9 @@ const questoesRef = collection(db, "questoes")
 const QuestionPage = () => {
     const { id } = useParams()
     
-    const [item, setItem] = useState(null)
+    const [item, setItem] = useState('')
     const q = query(questoesRef, where("id", "==", id))
-
+console.log(id)
     useEffect(() => {
         async function initial() {
             const querySnapshot = await getDocs(q)
