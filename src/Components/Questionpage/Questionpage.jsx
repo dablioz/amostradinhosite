@@ -21,7 +21,7 @@ const QuestionPage = () => {
     useEffect(() => {
         
         async function initial() {
-            const q = query(collection(db, "questoes"), where("id", "==", id));;
+            const q = query(collection(db, "questoes"), where("id", "==", {id}));;
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
