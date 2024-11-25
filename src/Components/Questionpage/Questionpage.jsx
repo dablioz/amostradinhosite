@@ -17,11 +17,11 @@ const QuestionPage = () => {
         setSelectedValue(event.target.value);
     };
     const [item, setItem] = useState("");
-    const q = query(collection(db, "questoes"), where("id", "==", 1));
-
+    
     useEffect(() => {
-        console.log(id);
+        
         async function initial() {
+            const q = query(collection(db, "questoes"), where("id", "==", id));;
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
