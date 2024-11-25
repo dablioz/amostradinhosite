@@ -10,10 +10,10 @@ const db = getFirestore(app)
 const questoesRef = collection(db, "questoes")
 
 const QuestionPage = () => {
-    const { i } = useParams()
-    console.log(i)
+    const { id } = useParams()
+    
     const [item, setItem] = useState(null)
-    const q = query(questoesRef, where("id", "==", i))
+    const q = query(questoesRef, where("id", "==", id))
 
     useEffect(() => {
         async function initial() {
