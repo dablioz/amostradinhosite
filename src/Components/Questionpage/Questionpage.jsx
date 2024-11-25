@@ -11,7 +11,11 @@ const questoesRef = collection(db, "questoes")
 
 const QuestionPage = () => {
     const { id } = useParams()
-    
+    const [selectedValue, setSelectedValue] = useState("a")
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value)
+    }
     const [item, setItem] = useState('')
     const q = query(questoesRef, where("id", "==", id))
 console.log(id)
