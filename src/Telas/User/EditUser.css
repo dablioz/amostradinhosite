@@ -8,11 +8,7 @@
     display: flex;
     max-width: fit-content;
     flex-direction: column;
-}
-
-#editUserField{
-    color: black;
-}
+} 
 
 #editUserFieldCont {
     margin-top: 15px;

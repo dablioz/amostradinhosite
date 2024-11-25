@@ -13,7 +13,8 @@ header {
 }
 
 #marca-container {
-    background: linear-gradient(to right, #efa571, #bb6c3b);
+    /* background: linear-gradient(to right, #efa571, #bb6c3b); */
+    background-color: #82a0af;
     font-size: 20px;
 }
 
@@ -40,35 +41,28 @@ header {
     /*-moz-user-select: none; /* For Firefox */
     /*-khtml-user-select: none; /* Konqueror HTML */
     /*}*/
-    & .item:hover {
+    /* & > .item:hover {
         background-color: #3e5e6b;
-    }
+    } */
+
     & #right {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-
-        & div {
-            display: flex;
-            align-content: center;
-        }
-
-        & #hamburguer {
-            margin-left: 8px;
-        }
+        height: 40px;
     }
 }
 
 #fdp {
-    height: 50px;
-
+    height: 60px; 
+    padding: 10px;
+    
+    display: flex;
+    place-content: center;
     & #logo {
-        height: 100%;
+        height: 40px;
     }
 }
 #usrIcon {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -77,17 +71,17 @@ header {
     justify-content: center;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 500px) {
     #logo {
         content: url("../../assets/logo_square.png");
     }
 }
 
-@media (max-width: 660px) {
+/* @media (max-width: 660px) {
     #marca > div {
         display: none;
     }
-}
+} */
 /* 
 #hamburguer_menu {
     margin-left: 10px;

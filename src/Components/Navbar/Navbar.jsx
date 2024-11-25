@@ -18,15 +18,23 @@ function Navbar() {
         /*  */
         if (type) {
             return signed ? (
-                <img id="usrIcon" src={user.photoURL || "https://tinyurl.com/5kub7nce"} />
+                <img
+                    onClick={() => navigate("/user")}
+                    id="usrIcon"
+                    src={user.photoURL || "https://tinyurl.com/5kub7nce"}
+                />
             ) : (
-                <AccountCircleOutlinedIcon fontSize="large" />
+                <AccountCircleOutlinedIcon onClick={() => navigate("/user")} fontSize="large" />
             )
         } else {
             return signed ? (
                 <ListItem id="pfpsec">
                     <Link to="/user">
-                        <img id="pfp" src={user.photoURL || "https://tinyurl.com/5kub7nce"} />
+                        <img
+                            onClick={() => navigate("/user")}
+                            id="pfp"
+                            src={user.photoURL || "https://tinyurl.com/5kub7nce"}
+                        />
                     </Link>
                 </ListItem>
             ) : (
@@ -38,17 +46,13 @@ function Navbar() {
     function teste() {
         let navigate = useNavigate()
         return signed ? (
-            <ListItem>
-                <ListItemButton id="sair" onClick={signOut}>
-                    Sair
-                </ListItemButton>
-            </ListItem>
+            <Button variant="contained" color="error" id="sair" onClick={signOut}>
+                Sair
+            </Button>
         ) : (
-            <ListItem>
-                <Button variant="contained" onClick={() => navigate("/auth")}>
-                    Entrar
-                </Button>
-            </ListItem>
+            <Button variant="contained" onClick={() => navigate("/auth")}>
+                Entrar
+            </Button>
         )
     }
 
@@ -62,10 +66,11 @@ function Navbar() {
             <header>
                 <div id="marca-container">
                     <div id="marca">
-                        {/** tu vai fazer um haburguer pra esse menu */}
+                        <div id="right">{useri(true)}</div>
                         <Link to="/" id="fdp">
                             <img id="logo" src={logo} alt="logo" />
                         </Link>
+                        <MenuIcon id="hamburguer" sx={{ fontSize: "40px" }} onClick={toggleDrawer(true)} />
 
                         {/* {
                         <div>
@@ -89,19 +94,13 @@ function Navbar() {
                             </a>
                         </div>
                         } */}
-
-                        <div id="right">
-                            <div onClick={() => navigate("/user")}>{useri(true)}</div>
-
-                            <MenuIcon id="hamburguer" sx={{ fontSize: "40px" }} onClick={toggleDrawer(true)} />
-                        </div>
                     </div>
                 </div>
                 <Drawer
                     id="drawer"
+                    anchor="right"
                     open={open}
                     onClose={toggleDrawer(false)}
-                    anchor="right"
                     ModalProps={{ keepMounted: true }}>
                     <List onClick={toggleDrawer(false)}>
                         {useri(false)}
@@ -118,9 +117,10 @@ function Navbar() {
                             </ListItem>
                         ))}
                     </List>
-                    <div style={{ placeSelf: "flex-end" }} onClick={toggleDrawer(false)}>
+
+                    <ListItem onClick={toggleDrawer(false)}>
                         {teste()}
-                    </div>
+                    </ListItem>
                 </Drawer>
             </header>
         </>

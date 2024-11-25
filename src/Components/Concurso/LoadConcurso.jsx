@@ -5,7 +5,7 @@ import { app } from "../../service/firebaseconfig.jsx"
 
 import SearchIcon from "@mui/icons-material/Search"
 import Fuse from "fuse.js"
-
+import * as React from "react"
 const db = getFirestore(app)
 const concursosRef = collection(db, "concursos")
 
@@ -30,11 +30,9 @@ class LoadConcursos extends PureComponent {
                 concursos: [...prevState.concursos, doc.data()],
             }))
         })
-    }
+    } 
 
-    componentDidUpdate(prevProps, prevState) {}
-
-    pesquisa(e) {
+    pesquisa() {
         const ai = input.value
 
         if (ai != "") {
@@ -68,7 +66,7 @@ class LoadConcursos extends PureComponent {
                     <div id="search" onClick={() => this.pesquisa()}>
                         <SearchIcon id=" icon" />
                     </div>
-                </div>
+                </div> 
                 {this.load()}
             </>
         )

@@ -15,7 +15,7 @@
 
     font-family: "Montserrat", sans-serif;
 
-    --height: calc(100dvh - 80px - 109px - 30px);
+    /* --height: calc(100dvh - 80px - 120px - 30px); */
 }
 
 /* h2{
@@ -27,7 +27,7 @@
 
     &:hover {
         transition: 200ms;
-        box-shadow: 0 0 10px #ff7300;
+        box-shadow: 0 0 10px 2px #035a86;
     }
 }
 

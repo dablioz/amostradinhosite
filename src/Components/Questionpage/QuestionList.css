@@ -1,0 +1,50 @@
+
+
+:root{
+    --cor: #c3c7cf;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse; 
+}
+
+td,
+th {   
+    border: 1px solid var(--cor);
+    text-align: left;
+    padding: 8px;
+}
+
+thead, tbody{
+    
+    max-width: 100vw;
+}
+ 
+
+tr:nth-child(even) {
+    background-color: var(--cor);
+}
+
+#top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#enun-cont{
+    & .MuiTextField-root{
+        width: 100%;
+    }
+}
+
+.alternatives{
+    & > .MuiTextField-root{
+        width: 85%;
+    }
+}
+
+#addQuest {
+    & > #buttons{
+        justify-content: space-between;
+    }
+}

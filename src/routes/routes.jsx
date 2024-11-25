@@ -10,7 +10,7 @@ import Sobre from "../Telas/Sobre/Sobre.jsx";
 import EditUser from "../Telas/User/EditUser.jsx";
 import User from "../Telas/User/User.jsx";
 import { AuthRoute, PrivateRoutes } from "./index.jsx";
- 
+import { QuestionList } from './../Components/Questionpage/QuestionList';
   
 
 export const Router = () => {
@@ -20,8 +20,9 @@ export const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
 
+                <Route path="/questoes" element= {<QuestionList />} /> 
+                <Route path="/questoes/:id" element= {<QuestionPage />} /> 
 
-                <Route path="/questoes" element= {<QuestionPage />} /> 
                 <Route path="/concursos" element={<Cursos />} />
                 <Route path="/guias" />
                 <Route path="/orgaos" />

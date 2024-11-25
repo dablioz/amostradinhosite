@@ -19,7 +19,6 @@ import cmm from "../../assets/CMM.jpeg"*/
 }
 
 import "./Cursos.css"
-
 function Cursos() {
     {
         /*const i = [
@@ -50,17 +49,21 @@ function Cursos() {
         boxShadow: 24,
         p: 2,
     }
-    
+
     const { user } = useContext(AuthGoogleContext)
-    const [open, setOpen] = React.useState(false)
-    const [query, setQuery] = React.useState('')
+    const [open, setOpen] = React.useState(false) 
 
     const handleOpen = () => {
         open ? setOpen(false) : setOpen(true)
     }
 
     function teste() {
-        if (user != null && (user.uid == "OcuKRfU9KkQG69JSbuBzp54XUmw1" || user.uid == "DcKltQnN29W4jMjAJMxwMOjCJ7i1" || user.uid =="L1sSI4bH5iMWHaMJ4xjs3bNRjzi1")) {
+        if (
+            user != null &&
+            (user.uid == "OcuKRfU9KkQG69JSbuBzp54XUmw1" ||
+                user.uid == "DcKltQnN29W4jMjAJMxwMOjCJ7i1" ||
+                user.uid == "L1sSI4bH5iMWHaMJ4xjs3bNRjzi1")
+        ) {
             return (
                 <div id="buttons">
                     <Button variant="contained" onClick={handleOpen}>
@@ -70,9 +73,9 @@ function Cursos() {
             )
         }
     }
-
+ 
     return (
-        <div id="cursos" className="cont"> 
+        <div id="cursos" className="cont">
             <h1>Concursos</h1>
             <LoadConcursos />
 
@@ -90,7 +93,7 @@ function Cursos() {
 
             <EditConcurso open={open} handleOpen={handleOpen} style={style} />
 
-                {teste()}
+            {teste()}
             {/*<Swiper
                 className="myswyper"
                 slidesPerView={"auto"}
