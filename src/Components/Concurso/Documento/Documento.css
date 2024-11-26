@@ -1,6 +1,7 @@
 #Documento-cont {
-    margin: 0 auto;
-    width: calc(90vw - 32px - 40px);
+    
+    margin: 10px auto;
+    width: calc(85vw - 32px - 40px);
     & > a { 
         display: flex;
         width: 100%;
