@@ -125,31 +125,18 @@ export function EditConcurso(props) {
 
     
     const addConc = async () => {
-        let edittitle = document.getElementById("edittitle").value
-        let editedital = document.getElementById("editedital").value
-        
-        let editfiminsc = document.getElementById("editfiminsc").value
-        
-        let editregiao = document.getElementById("editregiao").value
-        let editbanca = document.getElementById("editbanca").value
-        
-        /* console.log(edittitle)
-        console.log(editedital)
-        console.log(editfiminsc)
-        console.log(editregiao)
-        console.log(editbanca) */
         
         await setDoc(doc(concursosRef, edittitle), {
-            title: edittitle,
-            edital: editedital,
-            fiminsc: editfiminsc,
-            regiao: editregiao,
-            banca: editbanca,
+            title: edittitle.value,
+            edital: editedital.value,
+            fiminsc: editfiminsc.value,
+            regiao: editregiao.value,
+            banca: editbanca.value,
             files: [...desisto],
             image: alala,
         })
         
-        /* toast.success("Concurso registrado!") */
+        toast.success("Concurso registrado!")
     }
     
     function sabedeus() {
@@ -159,11 +146,13 @@ export function EditConcurso(props) {
         url.focus()
         url.value = ""
     }
+
     function remove(index) {
         let arr = desisto
         arr.splice(index, 1)
         setDesisto([...arr])
     }
+
     return (
         <Modal disablePortal disableEnforceFocus disableAutoFocus open={props.open} onClose={props.handleOpen}>
             <Box sx={props.style}>

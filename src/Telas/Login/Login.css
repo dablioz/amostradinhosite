@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 189px);
-
+    height: calc(100dvh - 200px);
+    min-height: 520px;
     
 }
 
@@ -43,8 +43,8 @@
     margin: 15px 0 10px;
 }
 
-.container button {
-    background-color: #da7522;
+.container button{ 
+    background-color: #035a86;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -55,6 +55,8 @@
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+
+    
 }
 
 .container button.hidden {

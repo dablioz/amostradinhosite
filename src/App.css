@@ -1,5 +1,6 @@
 #App {
-    position: relative; 
+    position: relative;
+    background-color: #e7ecee;
     min-height: 100dvh; /*def: 120px*/
     padding: 80px 0 120px 0; /* +40px top pro menu, default: 80px*/
     /* min-height: calc(100vh - 160px); */
@@ -7,7 +8,7 @@
 
 .cont {
     /* position: relative; */ 
-    max-width: 1280px;
+    max-width: 980px;
     width: calc(90vw);
 
     margin: 15px auto;

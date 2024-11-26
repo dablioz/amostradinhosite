@@ -23,12 +23,12 @@
 } */
 
 .laranja {
-    transition: 300ms;
-
+    transition: 300ms; 
     &:hover {
         transition: 200ms;
         box-shadow: 0 0 10px 2px #035a86;
     }
+    
 }
 
 .nomegrande { 

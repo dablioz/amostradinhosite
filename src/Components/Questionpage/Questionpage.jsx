@@ -1,40 +1,40 @@
-import { Radio } from "@mui/material";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import "./Questionpage.css"; // Arquivo CSS para estilização
+import { Radio } from "@mui/material"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import "./Questionpage.css" // Arquivo CSS para estilização
 
-import { getFirestore } from "firebase/firestore";
-import { app } from "../../service/firebaseconfig.jsx";
-const db = getFirestore(app);
-const questoesRef = collection(db, "questoes");
+import { getFirestore } from "firebase/firestore"
+import { app } from "../../service/firebaseconfig.jsx"
+const db = getFirestore(app)
+const questoesRef = collection(db, "questoes")
 
 const QuestionPage = () => {
-    const [selectedValue, setSelectedValue] = useState("a");
+    const [selectedValue, setSelectedValue] = useState("a")
 
     const handleChange = (event) => {
-        setSelectedValue(event.target.value);
-    };
-    const [item, setItem] = useState("");
+        setSelectedValue(event.target.value)
+    }
+    const [item, setItem] = useState("")
 
-    const { id } = useParams();
+    const { id } = useParams()
 
     useEffect(() => {
         async function initial() {
-            const querySnapshot = await getDocs(query(collection(db, "questoes"), where("id", "==", Number(id))));
+            const querySnapshot = await getDocs(query(collection(db, "questoes"), where("id", "==", Number(id))))
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data());
-                setItem(doc.data());
-            });
+                console.log(doc.id, " => ", doc.data())
+                setItem(doc.data())
+            })
         }
-        initial();
-    }, []);
+        initial()
+    }, [])
 
     return (
         <div>
             <main>
-                <div className="question-card">
+                <div className="question-card cont">
                     <h1>
                         {item.concurso + " - " + item.ano}
                         {/* #3126156 Tec Literal - Analista de Tecnologia da Informação (DATAPREV) / 2024 - "Inéditas
@@ -59,41 +59,70 @@ const QuestionPage = () => {
                     </p> */}
                     <div className="options">
                         <div id="option-cont">
-                            <Radio id="radioa" checked={selectedValue === "a"} onChange={handleChange} value="a" name="radio-buttons" inputProps={{ "aria-label": "A" }} />
+                            <Radio
+                                id="radioa"
+                                checked={selectedValue === "a"}
+                                onChange={handleChange}
+                                value="a"
+                                name="radio-buttons"
+                                inputProps={{ "aria-label": "A" }}
+                            />
                             <label htmlFor="radioa"> {item.questao_a} </label>
                         </div>
 
                         <div>
-                            <Radio id="radiob" checked={selectedValue === "b"} onChange={handleChange} value="b" name="radio-buttons" inputProps={{ "aria-label": "B" }} />
+                            <Radio
+                                id="radiob"
+                                checked={selectedValue === "b"}
+                                onChange={handleChange}
+                                value="b"
+                                name="radio-buttons"
+                                inputProps={{ "aria-label": "B" }}
+                            />
                             <label htmlFor="radiob"> {item.questao_b} </label>
                         </div>
 
                         <div>
-                            <Radio id="radioc" checked={selectedValue === "c"} onChange={handleChange} value="c" name="radio-buttons" inputProps={{ "aria-label": "C" }} />
+                            <Radio
+                                id="radioc"
+                                checked={selectedValue === "c"}
+                                onChange={handleChange}
+                                value="c"
+                                name="radio-buttons"
+                                inputProps={{ "aria-label": "C" }}
+                            />
                             <label htmlFor="radioc"> {item.questao_c} </label>
                         </div>
 
                         <div>
-                            <Radio id="radiod" checked={selectedValue === "d"} onChange={handleChange} value="d" name="radio-buttons" inputProps={{ "aria-label": "D" }} />
+                            <Radio
+                                id="radiod"
+                                checked={selectedValue === "d"}
+                                onChange={handleChange}
+                                value="d"
+                                name="radio-buttons"
+                                inputProps={{ "aria-label": "D" }}
+                            />
                             <label htmlFor="radiod"> {item.questao_d} </label>
                         </div>
                     </div>
-                    <button
-                        className="resolve"
-                        onClick={() => {
-                            if (selectedValue == item.answer) {
-                                alert("Voce Acertou");
-                            } else {
-                                alert("Voce errou");
-                            }
-                        }}
-                    >
-                        RESOLVER QUESTÃO
-                    </button>
+                    <div id="buttons">
+                        <button
+                            className="resolve"
+                            onClick={() => {
+                                if (selectedValue == item.answer) {
+                                    alert("Voce Acertou")
+                                } else {
+                                    alert("Voce errou")
+                                }
+                            }}>
+                            RESPONDER
+                        </button>
+                    </div>
                 </div>
             </main>
         </div>
-    );
-};
+    )
+}
 
-export default QuestionPage;
+export default QuestionPage

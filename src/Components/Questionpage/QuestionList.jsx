@@ -8,6 +8,8 @@ import "./QuestionList.css";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { app } from "../../service/firebaseconfig.jsx";
+import { toast } from "react-toastify";
+
 const db = getFirestore(app);
 const questoesRef = collection(db, "questoes");
 
@@ -74,7 +76,7 @@ export function QuestionList() {
             id: Math.floor(Math.random() * 200),
         });
 
-        /* toast.success("Concurso registrado!") */
+        toast.success("Questao registrada!")
     };
 
     const [selectedValue, setSelectedValue] = React.useState("a");

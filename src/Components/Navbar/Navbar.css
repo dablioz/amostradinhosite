@@ -23,7 +23,7 @@ header {
     display: flex;
     height: 80px;
     width: 90%;
-    max-width: 1280px;
+    max-width: 980px;
     margin: 0 auto;
 
     place-items: center;
@@ -71,7 +71,7 @@ header {
     justify-content: center;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     #logo {
         content: url("../../assets/logo_square.png");
     }
