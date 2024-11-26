@@ -125,9 +125,9 @@ export function EditConcurso(props) {
 
     
     const addConc = async () => {
-        let edittitle = document.getElementById("edittitle").value
-        await setDoc(doc(concursosRef, edittitle), {
-            title: edittitle,
+        
+        await setDoc(doc(concursosRef, edittitle.value), {
+            title: edittitle.value,
             edital: editedital.value,
             fiminsc: editfiminsc.value,
             regiao: editregiao.value,
@@ -234,8 +234,8 @@ export function EditConcurso(props) {
 
                 {/* <TextField variant="standard" label="Image URL"/> */}
                 <div id="buttons">
-                    <Button type="submit" variant="contained" onClick={addConc}>
-                        Enviar
+                    <Button type="submit" variant="contained" onClick={() => addConc()}>
+                         Enviar
                     </Button>
                 </div>
             </Box>
