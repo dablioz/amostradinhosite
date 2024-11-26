@@ -126,6 +126,10 @@ export function EditConcurso(props) {
     
     const addConc = async () => {
         let edittitle = document.getElementById("edittitle")
+        let editedital = document.getElementById("editedital")
+        let editfiminsc = document.getElementById("editfiminsc")
+        let editregiao = document.getElementById("editregiao")
+        let editbanca = document.getElementById("editbanca")
         await setDoc(doc(concursosRef, edittitle.value), {
             title: edittitle.value,
             edital: editedital.value,
