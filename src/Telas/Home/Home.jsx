@@ -16,6 +16,7 @@ function Home() {
             */}
 
             <div id="ll"> 
+                <br />
                 <h1>Seu melhor amigo quando se pensa em concursos</h1> <br />
                 <p>Sua aprovação começa aqui, registre-se e estude de graça</p>
                 <br />
