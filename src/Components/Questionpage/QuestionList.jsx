@@ -76,7 +76,7 @@ export function QuestionList() {
             id: Math.floor(Math.random() * 200),
         });
 
-        toast.success("Questao registrada!")
+        toast.success("Questao registrada!");
     };
 
     const [selectedValue, setSelectedValue] = React.useState("a");
@@ -87,6 +87,7 @@ export function QuestionList() {
 
     return (
         <>
+            <h1>Questoes De Concursos</h1>
             <table className="cont">
                 <thead>
                     <tr>
