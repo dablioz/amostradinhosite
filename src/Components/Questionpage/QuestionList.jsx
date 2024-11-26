@@ -86,9 +86,9 @@ export function QuestionList() {
     };
 
     return (
-        <>
+        <div id="cont">
             <h1>Questoes De Concursos</h1>
-            <table className="cont">
+            <table >
                 <thead>
                     <tr>
                         <th>Numero</th>
@@ -161,6 +161,6 @@ export function QuestionList() {
                     </div>
                 </Box>
             </Modal>
-        </>
+        </div>
     );
 }
