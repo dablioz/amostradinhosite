@@ -86,7 +86,7 @@ export function Concurso(props) {
                 <div id="teste">{loadfiles}</div>
 
                 <div id="balala">
-                    <a href="">{props.items.banca}</a>
+                    <span>{props.items.banca}</span>
                     {"Regiao: "} {props.items.regiao}
                 </div>
             </Collapse>
