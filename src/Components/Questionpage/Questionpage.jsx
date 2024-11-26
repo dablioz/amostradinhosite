@@ -58,7 +58,8 @@ const QuestionPage = () => {
                         dia útil do mês de fevereiro do ano a que se refere.
                     </p> */}
                     <div className="options">
-                        <div id="option-cont">
+                        <label htmlFor="radioa"> 
+                        <div>
                             <Radio
                                 id="radioa"
                                 checked={selectedValue === "a"}
@@ -67,9 +68,10 @@ const QuestionPage = () => {
                                 name="radio-buttons"
                                 inputProps={{ "aria-label": "A" }}
                             />
-                            <label htmlFor="radioa"> {item.questao_a} </label>
+                            {item.questao_a} 
                         </div>
-
+                        </label>
+                        <label htmlFor="radiob">
                         <div>
                             <Radio
                                 id="radiob"
@@ -79,10 +81,11 @@ const QuestionPage = () => {
                                 name="radio-buttons"
                                 inputProps={{ "aria-label": "B" }}
                             />
-                            <label htmlFor="radiob"> {item.questao_b} </label>
+                             {item.questao_b} 
                         </div>
-
+                        </label>
                         <div>
+                            <label htmlFor="radioc">
                             <Radio
                                 id="radioc"
                                 checked={selectedValue === "c"}
@@ -91,10 +94,12 @@ const QuestionPage = () => {
                                 name="radio-buttons"
                                 inputProps={{ "aria-label": "C" }}
                             />
-                            <label htmlFor="radioc"> {item.questao_c} </label>
+                             {item.questao_c} 
                         </div>
+                            </label>
 
                         <div>
+                            <label htmlFor="radiod">
                             <Radio
                                 id="radiod"
                                 checked={selectedValue === "d"}
@@ -103,8 +108,9 @@ const QuestionPage = () => {
                                 name="radio-buttons"
                                 inputProps={{ "aria-label": "D" }}
                             />
-                            <label htmlFor="radiod"> {item.questao_d} </label>
+                             {item.questao_d} 
                         </div>
+                            </label>
                     </div>
                     <div id="buttons">
                         <button
