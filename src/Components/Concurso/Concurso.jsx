@@ -123,7 +123,7 @@ export function EditConcurso(props) {
         }
     }
 
-    
+    let edittitle = document.getElementById("edittitle")
     const addConc = async () => {
         
         await setDoc(doc(concursosRef, edittitle.value), {
