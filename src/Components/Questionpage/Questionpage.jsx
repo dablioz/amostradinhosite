@@ -84,8 +84,9 @@ const QuestionPage = () => {
                              {item.questao_b} 
                         </div>
                         </label>
+                        <label htmlFor="radioc">
                         <div>
-                            <label htmlFor="radioc">
+                            
                             <Radio
                                 id="radioc"
                                 checked={selectedValue === "c"}
@@ -97,9 +98,9 @@ const QuestionPage = () => {
                              {item.questao_c} 
                         </div>
                             </label>
-
+                        <label htmlFor="radiod">
                         <div>
-                            <label htmlFor="radiod">
+                            
                             <Radio
                                 id="radiod"
                                 checked={selectedValue === "d"}
