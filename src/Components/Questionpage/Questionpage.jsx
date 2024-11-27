@@ -36,7 +36,7 @@ const QuestionPage = () => {
     return (
         <div>
             <main>
-                <div className="question-card cont">
+                <div className="cont question-card">
                     <h1>
                         {item.concurso + " - " + item.ano}
                         {/* #3126156 Tec Literal - Analista de Tecnologia da Informação (DATAPREV) / 2024 - "Inéditas
