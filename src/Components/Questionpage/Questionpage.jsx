@@ -1,35 +1,37 @@
-import { Radio } from "@mui/material"
-import { collection, getDocs, query, where } from "firebase/firestore"
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router"
-import "./Questionpage.css" // Arquivo CSS para estilização
+import { Radio } from "@mui/material";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import "./Questionpage.css"; // Arquivo CSS para estilização
 
-import { getFirestore } from "firebase/firestore"
-import { app } from "../../service/firebaseconfig.jsx"
-const db = getFirestore(app)
-const questoesRef = collection(db, "questoes")
+import { getFirestore } from "firebase/firestore";
+import { app } from "../../service/firebaseconfig.jsx";
+const db = getFirestore(app);
+const questoesRef = collection(db, "questoes");
 
 const QuestionPage = () => {
-    const [selectedValue, setSelectedValue] = useState("a")
+    const [selectedValue, setSelectedValue] = useState("a");
 
     const handleChange = (event) => {
-        setSelectedValue(event.target.value)
-    }
-    const [item, setItem] = useState("")
+        setSelectedValue(event.target.value);
+    };
+    const [item, setItem] = useState("");
 
-    const { id } = useParams()
+    const { id } = useParams();
 
     useEffect(() => {
         async function initial() {
-            const querySnapshot = await getDocs(query(collection(db, "questoes"), where("id", "==", Number(id))))
+            const querySnapshot = await getDocs(
+                query(collection(db, "questoes"), where("id", "==", Number(id)))
+            );
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data())
-                setItem(doc.data())
-            })
+                console.log(doc.id, " => ", doc.data());
+                setItem(doc.data());
+            });
         }
-        initial()
-    }, [])
+        initial();
+    }, []);
 
     return (
         <div>
@@ -41,7 +43,8 @@ const QuestionPage = () => {
                         Literais" */}
                     </h1>
                     <p>
-                        <strong>Matéria:</strong> {item.materia} {/* Auditoria Governamental e Controle */}{" "}
+                        <strong>Matéria:</strong> {item.materia}{" "}
+                        {/* Auditoria Governamental e Controle */}{" "}
                         {/* <strong>Assunto:</strong> Outros
                         Normativos da CGU */}
                     </p>
@@ -58,78 +61,77 @@ const QuestionPage = () => {
                         dia útil do mês de fevereiro do ano a que se refere.
                     </p> */}
                     <div className="options">
-                        <label htmlFor="radioa"> 
-                        <div>
-                            <Radio
-                                id="radioa"
-                                checked={selectedValue === "a"}
-                                onChange={handleChange}
-                                value="a"
-                                name="radio-buttons"
-                                inputProps={{ "aria-label": "A" }}
-                            />
-                            {item.questao_a} 
-                        </div>
+                        <label htmlFor="radioa">
+                            <div>
+                                <Radio
+                                    id="radioa"
+                                    checked={selectedValue === "a"}
+                                    onChange={handleChange}
+                                    value="a"
+                                    name="radio-buttons"
+                                    inputProps={{ "aria-label": "A" }}
+                                />
+                                {item.questao_a}
+                            </div>
                         </label>
                         <label htmlFor="radiob">
-                        <div>
-                            <Radio
-                                id="radiob"
-                                checked={selectedValue === "b"}
-                                onChange={handleChange}
-                                value="b"
-                                name="radio-buttons"
-                                inputProps={{ "aria-label": "B" }}
-                            />
-                             {item.questao_b} 
-                        </div>
+                            <div>
+                                <Radio
+                                    id="radiob"
+                                    checked={selectedValue === "b"}
+                                    onChange={handleChange}
+                                    value="b"
+                                    name="radio-buttons"
+                                    inputProps={{ "aria-label": "B" }}
+                                />
+                                {item.questao_b}
+                            </div>
                         </label>
                         <label htmlFor="radioc">
-                        <div>
-                            
-                            <Radio
-                                id="radioc"
-                                checked={selectedValue === "c"}
-                                onChange={handleChange}
-                                value="c"
-                                name="radio-buttons"
-                                inputProps={{ "aria-label": "C" }}
-                            />
-                             {item.questao_c} 
-                        </div>
-                            </label>
+                            <div>
+                                <Radio
+                                    id="radioc"
+                                    checked={selectedValue === "c"}
+                                    onChange={handleChange}
+                                    value="c"
+                                    name="radio-buttons"
+                                    inputProps={{ "aria-label": "C" }}
+                                />
+                                {item.questao_c}
+                            </div>
+                        </label>
                         <label htmlFor="radiod">
-                        <div>
-                            
-                            <Radio
-                                id="radiod"
-                                checked={selectedValue === "d"}
-                                onChange={handleChange}
-                                value="d"
-                                name="radio-buttons"
-                                inputProps={{ "aria-label": "D" }}
-                            />
-                             {item.questao_d} 
-                        </div>
-                            </label>
+                            <div>
+                                <Radio
+                                    id="radiod"
+                                    checked={selectedValue === "d"}
+                                    onChange={handleChange}
+                                    value="d"
+                                    name="radio-buttons"
+                                    inputProps={{ "aria-label": "D" }}
+                                />
+                                {item.questao_d}
+                            </div>
+                        </label>
                     </div>
                     <div id="buttons">
                         <button
                             className="resolve"
                             onClick={() => {
                                 if (selectedValue == item.answer) {
-                                    alert("Voce Acertou")
+                                    alert("Voce Acertou");
                                 } else {
-                                    alert("Voce errou")
+                                    alert("Voce errou");
                                 }
-                            }}>
+                            }}
+                        >
                             RESPONDER
                         </button>
                     </div>
                 </div>
             </main>
         </div>
-    )
-}
+    );
+};
 
-export default QuestionPage
+export default QuestionPage;

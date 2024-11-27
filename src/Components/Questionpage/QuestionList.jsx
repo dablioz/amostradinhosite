@@ -88,7 +88,7 @@ export function QuestionList() {
     return (
         <div className="cont">
             <h1>Questoes De Concursos</h1>
-            <table >
+            <table>
                 <thead>
                     <tr>
                         <th>Numero</th>
