@@ -107,10 +107,10 @@ function Navbar() {
                         {["Questoes", "Concursos", "Guias", "Orgãos", "Bancas"].map((text, index) => (
                             <ListItem key={index} disablePadding>
                                 <ListItemButton>
+                                    <Link to={`/${text}`}>
                                     <ListItemIcon>
                                         <FormatListBulletedIcon />
                                     </ListItemIcon>
-                                    <Link to={`/${text}`}>
                                         <span className="item">{text}</span>
                                     </Link>
                                 </ListItemButton>
