@@ -111,6 +111,7 @@ function Navbar() {
                                     <ListItemIcon>
                                         <FormatListBulletedIcon />
                                     </ListItemIcon>
+                                    
                                         <span className="item">{text}</span>
                                     </Link>
                                 </ListItemButton>
