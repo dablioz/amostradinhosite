@@ -1,5 +1,6 @@
 import "./Footer.css";
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom"
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -30,6 +31,7 @@ const style = {
 };
 
 function Footer() {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
@@ -44,7 +46,7 @@ function Footer() {
                 <div id="c">
                     <div id="left">
                         <div className="aaaa">
-                            <span>Quem somos</span> 
+                            <Link to={"/sobre"}>Quem somos</Link> 
                             <span>Trabalhe Conosco</span>
                         </div>
                         <div className="aaaa">
@@ -53,7 +55,7 @@ function Footer() {
                         </div>
                     </div>
                     <div id="right">
-                        <span>Fale conosco</span>
+                        <a target="_blank" href="https://wa.me/qr/3MAKWDT3IP4RA1">Fale Conosco</a>
                         <div id="links">
                             <a target="_blank" href="https://www.instagram.com/wzley77/">
                                 <InstagramIcon />
