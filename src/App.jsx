@@ -12,7 +12,7 @@ function App() {
     });
 
     return (
-        <div id="App">
+        <div id="App" >
             <AuthGoogleProvider>
                 <ThemeProvider theme={darkTheme}>
                     <Router />

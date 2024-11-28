@@ -18,7 +18,7 @@ function Home() {
             <div id="ll"> 
                 <br />
                 <h1>Seu melhor amigo quando se pensa em concursos</h1> <br />
-                <p>Sua aprovação começa aqui, registre-se e estude de graça</p>
+                <p>Sua aprovação começa aqui, <Link to={"/auth"}>registre-se</Link>  e estude de graça</p>
                 <br />
                 <Link to="/concursos">
                     <button className="laranja">

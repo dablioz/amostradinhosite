@@ -21,15 +21,13 @@ function User() {
     const userImage = user.photoURL || "https://tinyurl.com/5kub7nce"
 
     const [open, setOpen] = React.useState(false)
-    
+
     const [openTip, setOpenTip] = React.useState(true)
 
-    const handleTip = () => 
-        openTip ? setOpenTip(false) : setOpenTip(true)
-    
-    const handleOpen = () => 
-        open ? setOpen(false) : setOpen(true)
-    
+    const handleTip = () => (openTip ? setOpenTip(false) : setOpenTip(true))
+
+    const handleOpen = () => (open ? setOpen(false) : setOpen(true))
+
     const style = {
         position: "absolute",
         top: "50%",
@@ -47,20 +45,29 @@ function User() {
             <div id="usercard">
                 <img id="userbg" src={neymar} />
                 {/*"https://i.ytimg.com/vi/SGQULVZ8lyk/maxresdefault.jpg?7857057827"*/}
-                <div id="user-data">
-                    <Tooltip open={openTip} onClose={handleTip} onOpen={handleTip} title="< Edit User" placement="right-end">
+                <div id="user-data" className="cont">
+                    <Tooltip
+                        open={openTip}
+                        onClose={handleTip}
+                        onOpen={handleTip}
+                        title="< Edit User"
+                        placement="right-end">
                         <img src={userImage} id="pfp" onClick={handleOpen} />
                     </Tooltip>
                     <h2>{username}</h2>
                 </div>
             </div>
 
-            <div id="buttons">
-                <Link to="/">
-                    <Button id="sair" onClick={signOut} variant="outlined" color="error">
-                        Sair
-                    </Button>
-                </Link>
+            {/* body */}
+
+            <div className="cont">
+                <div id="buttons">
+                    <Link to="/">
+                        <Button id="sair" onClick={signOut} variant="outlined" color="error">
+                            Sair
+                        </Button>
+                    </Link>
+                </div>
             </div>
 
             <Modal disablePortal disableEnforceFocus disableAutoFocus open={open} onClose={handleOpen}>
