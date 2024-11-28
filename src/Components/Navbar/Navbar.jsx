@@ -127,15 +127,16 @@ function Navbar() {
                             </ListItem>
                         ))}
                     </List>
-
-                    <ListItem
-                        style={{ cursor: "pointer" }}
-                        onClick={() => {
-                            toggleDrawer()
-                            navigate("/user")
-                        }}>
-                        {teste()}
-                    </ListItem>
+                    <div>
+                        <ListItemButton
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                                toggleDrawer()
+                                navigate("/user")
+                            }}>
+                            {teste()}
+                        </ListItemButton>
+                    </div>
                 </Drawer>
             </header>
         </>
