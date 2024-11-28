@@ -54,7 +54,7 @@ function Navbar() {
                     onClick={() => navigate("/user")}
                     src={user.photoURL || "https://tinyurl.com/5kub7nce"}
                 />
-                <span style={{ margin: "auto" }}> {user.displayName || user} </span>
+                <span style={{ margin: "10px auto" }}> {user.displayName || user} </span>
             </>
         ) : (
             <Button variant="contained" onClick={() => navigate("/auth")}>
@@ -129,7 +129,7 @@ function Navbar() {
                     </List>
                     <div>
                         <ListItemButton
-                            style={{ cursor: "pointer" }}
+                            
                             onClick={() => {
                                 toggleDrawer()
                                 navigate("/user")
