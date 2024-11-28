@@ -83,7 +83,9 @@ export function Concurso(props) {
             </div>
 
             <Collapse id="coll" in={expanded} timeout="auto">
-                <div id="teste">{loadfiles}</div>
+                <div id="teste"> 
+                        {loadfiles} 
+                </div>
 
                 <div id="balala">
                     <span>{props.items.banca}</span>
@@ -123,7 +125,6 @@ export function EditConcurso(props) {
         }
     }
 
-    
     const addConc = async () => {
         /*let edittitle = document.getElementById("edittitle")
         let editedital = document.getElementById("editedital")
@@ -139,10 +140,10 @@ export function EditConcurso(props) {
             files: [...desisto],
             image: alala,
         })
-        
+
         toast.success("Concurso registrado!")
     }
-    
+
     function sabedeus() {
         let url = document.getElementById("editlink")
 
@@ -239,7 +240,7 @@ export function EditConcurso(props) {
                 {/* <TextField variant="standard" label="Image URL"/> */}
                 <div id="buttons">
                     <Button type="submit" variant="contained" onClick={() => addConc()}>
-                         Enviar
+                        Enviar
                     </Button>
                 </div>
             </Box>

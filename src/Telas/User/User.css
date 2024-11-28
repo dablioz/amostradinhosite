@@ -21,6 +21,7 @@
 
 #usercard div h2 {
     line-height: 50px;
+    margin-right: 25px;
 }
 
 #userbg {
@@ -32,10 +33,10 @@
 }
 
 #pfp {
-    max-height: 100px;
-    min-height: 100px;
-    max-width: 100px;
-    min-width: 100px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
     border-radius: 50%;
     object-fit: cover;
 }

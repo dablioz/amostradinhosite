@@ -1,11 +1,10 @@
 #Documento-cont {
-    
-    margin: 10px auto;
-    width: calc(85vw - 32px - 40px);
-    max-width: calc(980px - 32px - 40px);
+    margin: 10px auto; 
+    width: 100%;
+    flex: 1;
+
     & > a { 
-        display: flex;
-        width: 100%;
+        display: flex; 
         justify-content: space-between;
     }
 }
