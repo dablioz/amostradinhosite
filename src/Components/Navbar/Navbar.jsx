@@ -54,7 +54,7 @@ function Navbar() {
                     onClick={() => navigate("/user")}
                     src={user.photoURL || "https://tinyurl.com/5kub7nce"}
                 />
-                <span style={{ marginLeft: "8px" }}> {user.displayName || user} </span>
+                <span style={{ marginLeft: "12px" }}> {user.displayName || user} </span>
             </>
         ) : (
             <Button variant="contained" onClick={() => navigate("/auth")}>
