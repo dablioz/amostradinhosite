@@ -76,10 +76,9 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                console.log(e.key)
-                                if (e.keyCode == 13) {
-                                    register()
-                                }
+                                
+                                if (e.key == "Enter) register()
+                                
                             }}
                             name="senha"
                             id="passwordField"
@@ -128,10 +127,9 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                console.log(e.key)
-                                if (e.key == 13) {
-                                    login()
-                                }
+                                
+                                if (e.key == "Enter") login()
+                                
                             }}
                             id="passwordField"
                             name="senha"
