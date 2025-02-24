@@ -127,7 +127,7 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                if (e.code == "Enter") {
+                                if (e.code == 13) {
                                     login()
                                 }
                             }}
