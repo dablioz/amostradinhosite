@@ -77,7 +77,7 @@ function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
                                 
-                                if (e.key == "Enter) register()
+                                if (e.key == "Enter") register()
                                 
                             }}
                             name="senha"
