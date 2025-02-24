@@ -50,7 +50,7 @@ function Login() {
                         </div>
                         <span>ou use seu e-mail para registro</span>
 
-                        <input
+                         <input
                             autoFocus
                             type="text"
                             value={user}
@@ -76,7 +76,8 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                if (e.code == "Enter") {
+                                console.log(e.code)
+                                if (e.code == 13) {
                                     register()
                                 }
                             }}
@@ -127,6 +128,7 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
+                                console.log(e.code)
                                 if (e.code == 13) {
                                     login()
                                 }
@@ -138,7 +140,7 @@ function Login() {
                         />
                         <a href="#">Esqueceu sua senha?</a>
 
-                        <button className="laranja" /* type="submit" */ onClick={login}>
+                        <button className="laranja" /* type="submit" */ onClick={() => login}>
                             Entrar
                         </button>
                     </div>
