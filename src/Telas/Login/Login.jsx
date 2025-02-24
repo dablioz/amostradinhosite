@@ -76,8 +76,8 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                console.log(e.code)
-                                if (e.code == 13) {
+                                console.log(e.key)
+                                if (e.keyCode == 13) {
                                     register()
                                 }
                             }}
@@ -128,8 +128,8 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={(e) => {
-                                console.log(e.code)
-                                if (e.code == 13) {
+                                console.log(e.key)
+                                if (e.key == 13) {
                                     login()
                                 }
                             }}
