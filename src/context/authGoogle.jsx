@@ -93,7 +93,7 @@ export const AuthGoogleProvider = ({ children }) => {
             .catch((error) => {
                 const errorCode = error.code;
                 // ..
-                if (errorCode == "auth/invalid-email") toast.error("Email ou senha Inválidos");
+                if (errorCode == "auth/invalid-email") toast.error("Email inválido");
 
                 console.log(error);
             });
@@ -115,6 +115,8 @@ export const AuthGoogleProvider = ({ children }) => {
             })
             .catch((error) => {
                 console.log(error.code)
+                    if(error.code == "auth/invalid-credential")
+                    toast.error("Usuário ou senha incorretos")
                 /* if (error.message) */
             });
 
